@@ -1,0 +1,29 @@
+@mixin theme-colors($light-theme: true) {
+  @if $light-theme {
+    @each $name, $color in $light-colors {
+      --#{$name}: #{$color};
+    }
+  } @else {
+    @each $name, $color in $dark-colors {
+      --#{$name}: #{$color};
+    }
+  }
+}
+
+@mixin adaptive-font($minSize, $maxSize, $maxWidth, $minWidth: 320px) {
+  $addSize: ($maxSize - $minSize) * 2;
+
+  @media (max-width: $maxWidth) {
+    font-size: calc(#{$minSize + px} + #{$addSize} * (100vw - $minWidth) / ($maxWidth - 30));
+  }
+
+  @media (max-width: $minWidth) {
+    font-size: $minSize;
+  }
+
+  //@media (max-width: 588px) {
+  //    .nl.test {
+  //        font-size: calc(14px + ((24 - 14) * 2) * ((100vw - 320px) / 588)) !important;
+  //    }
+  //}
+}
