@@ -21,10 +21,10 @@ import { environment } from "@environments/environment";
         AppRoutingModule
     ],
     providers: [
-        // {
-        //     provide: APP_BASE_HREF,
-        //     useValue: environment.BASE_HREF
-        // },
+        {
+            provide: APP_BASE_HREF,
+            useValue: environment.BASE_HREF
+        },
     ],
     bootstrap: [AppComponent]
 })
