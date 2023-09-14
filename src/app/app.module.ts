@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { NgOptimizedImage } from "@angular/common";
+
+
+import { AppComponent } from "@app/app.component";
+import { CoreModule } from "@app/core";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { NgOptimizedImage } from "@angular/common";
   ],
     imports: [
         BrowserModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        CoreModule
     ],
   providers: [],
   bootstrap: [AppComponent]

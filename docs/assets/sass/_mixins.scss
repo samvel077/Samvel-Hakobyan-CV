@@ -10,20 +10,16 @@
   }
 }
 
-@mixin adaptive-font($minSize, $maxSize, $maxWidth, $minWidth: 320px) {
+@mixin adaptive-font($minSize, $maxSize, $maxWidth, $minWidth: 375px) {
   $addSize: ($maxSize - $minSize) * 2;
 
-  @media (max-width: $maxWidth) {
-    font-size: calc(#{$minSize + px} + #{$addSize} * (100vw - $minWidth) / ($maxWidth - 30));
+  font-size: #{$maxSize + px};
+
+  @media (max-width: #{$maxWidth + px}) {
+    font-size: calc(#{$minSize + px} + #{$addSize} * (100vw - #{$minWidth}) / (#{$maxWidth} + 150));
   }
 
   @media (max-width: $minWidth) {
-    font-size: $minSize;
+    font-size: #{$minSize + px};
   }
-
-  //@media (max-width: 588px) {
-  //    .nl.test {
-  //        font-size: calc(14px + ((24 - 14) * 2) * ((100vw - 320px) / 588)) !important;
-  //    }
-  //}
 }

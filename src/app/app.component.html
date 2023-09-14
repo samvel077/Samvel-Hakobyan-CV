@@ -1,17 +1,23 @@
 <div class="layout flex flex-col gap-6 md:gap-10">
-    <div class="container relative max-w-4xl bg-page bg-no-repeat bg-100% shadow-2xl">
-        <img ngSrc="assets/images/background.jpg" class="invisible" height="1280" width="905" alt="background">
-
-        <div class="wrapper absolute py-6 sm:py-12 w-wrapper-100% sm:w-wrapper-100%-sm h-full top-0">
-            test
-        </div>
+    <div class="download text-center">
+        <a href="assets/pdf/Samvel_Hkakobyan_CV.pdf" download="Samvel_Hakobyan_CV">
+            <button type="button"
+                    class="text-white shadow-xl bg-blue-950 rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2">
+                <svg class="w-3.5 h-3.5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 16 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M8 1v11m0 0 4-4m-4 4L4 8m11 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3"/>
+                </svg>
+                Download PDF
+            </button>
+        </a>
     </div>
 
-    <div class="container relative max-w-4xl bg-page bg-no-repeat bg-100% shadow-2xl">
+    <div class="container relative max-w-4xl bg-page bg-no-repeat bg-100% shadow-xl">
         <img ngSrc="assets/images/background.jpg" class="invisible" height="1280" width="905" alt="background">
 
-        <div class="wrapper absolute py-6 sm:py-12 w-wrapper-100% sm:w-wrapper-100%-sm h-full top-0">
-            test
+        <div class="wrapper absolute py-4 sm:py-12 w-wrapper-100% sm:w-wrapper-100%-sm h-full top-0">
+            <app-header></app-header>
         </div>
     </div>
 </div>

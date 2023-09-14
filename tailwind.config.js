@@ -26,14 +26,16 @@ module.exports = {
                 '100%': "100%"
             },
             width: {
-                'wrapper-100%': "calc(100% - 40px)",
-                'wrapper-100%-sm': "calc(100% - 80px)"
+                'wrapper-100%': "calc(100% - 30px)",
+                'wrapper-100%-sm': "calc(100% - 80px)",
+                'picture-before-100%': "calc(100% + 15px)",
+                'picture-before-100%-sm': "calc(100% + 40px)"
             }
         },
         container: {
             center: true,
             padding: {
-                DEFAULT: "20px",
+                DEFAULT: "15px",
                 sm: "40px",
             }
         },

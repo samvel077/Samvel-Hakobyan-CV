@@ -1,0 +1,12 @@
+.header {
+  &-profile-picture {
+    &:before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #122630;
+    }
+  }
+}
