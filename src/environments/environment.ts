@@ -1,4 +1,7 @@
 export const environment = {
-    BASE_HREF: '',
+    // This for local "baseHref" in angular.json, the baseHref must be between / / this lines
+    BASE_HREF: '/Samvel-Hakobyan-CV/',
+
+    // BASE_HREF: '',
     production: false,
 }

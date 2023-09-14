@@ -21,10 +21,11 @@ import { environment } from "@environments/environment";
         AppRoutingModule
     ],
     providers: [
-        // {
-        //     provide: APP_BASE_HREF,
-        //     useValue: environment.BASE_HREF
-        // },
+        // If you use the "baseHref" for local in angular.json you also need to pass this provider for routing
+        {
+            provide: APP_BASE_HREF,
+            useValue: environment.BASE_HREF
+        },
     ],
     bootstrap: [AppComponent]
 })

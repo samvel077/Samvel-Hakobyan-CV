@@ -33,6 +33,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/Samvel-Hakobyan-CV/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -42,12 +43,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": ".",
-                "input": "src/index.html",
-                "output": "404.html"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -61,6 +57,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/Samvel-Hakobyan-CV/",
               "budgets": [
                 {
                   "type": "initial",
