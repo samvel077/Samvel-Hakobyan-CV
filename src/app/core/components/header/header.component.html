@@ -5,23 +5,16 @@
              height="800" width="800">
     </div>
     <div class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%]">
-        <h1 class="header-profile-info_title text-header font-extrabold dark:text-white">Samvel
-            Hakobyan</h1>
+        <h1 class="header-profile-info_title text-header font-extrabold dark:text-white">{{ content.name }}</h1>
 
         <p class="header-profile-info_subtitle text-subheader italic">
             <mark class="px-3 sm:px-6 py-1 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
-                Front-end Angular Developer
+                {{ content.position }}
             </mark>
         </p>
 
         <p class="header-profile-info_text text-info line-clamp-4 sm:line-clamp-none leading-3 sm:leading-5">
-            Front-end Developer with over 3 years experience. I specialize in JavaScript and have
-            professional experience working with Angular.
-            During this time, I have faced various challenges and managed to offer the most
-            optimal and the best solutions.
-            Create complex web applications with user friendly interfaces.
-            Develop efficient and reusable components and front-end solutions with ensuring a clear
-            dependency chain, in terms of both application logic as well as file relationships.
+            {{ content.about }}
         </p>
         <p class="header-profile-info_text w-fit mt-[-10px] text-xs underline sm:hidden cursor-pointer"
            data-tooltip-target="header-profile-info_tooltip"
@@ -31,13 +24,7 @@
         </p>
         <div id="header-profile-info_tooltip" role="tooltip"
              class="absolute z-10 sm:hidden invisible inline-block px-3 py-2 text-xs text-white transition-opacity duration-300 bg-blue-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-blue-950">
-            Front-end Developer with over 3 years experience. I specialize in JavaScript and have
-            professional experience working with Angular.
-            During this time, I have faced various challenges and managed to offer the most
-            optimal and the best solutions.
-            Create complex web applications with user friendly interfaces.
-            Develop efficient and reusable components and front-end solutions with ensuring a clear
-            dependency chain, in terms of both application logic as well as file relationships.
+            {{ content.about }}
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
     </div>
