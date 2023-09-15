@@ -25,6 +25,7 @@
 
     @apply min-h-full;
     @apply p-5;
+    @apply touch-manipulation;
 
     @media screen and (max-width: theme('screens.sm')) {
       @apply p-2.5;
