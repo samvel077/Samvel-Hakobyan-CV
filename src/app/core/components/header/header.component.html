@@ -4,7 +4,7 @@
              alt="Rounded avatar"
              height="800" width="800">
     </div>
-    <div class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%] relative">
+    <div class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%]">
         <h1 class="header-profile-info_title text-header font-extrabold dark:text-white">{{ content.name }}</h1>
 
         <p class="header-profile-info_subtitle text-subheader italic">
@@ -13,14 +13,15 @@
             </mark>
         </p>
 
-        <p class="header-profile-info_text text-info line-clamp-4 sm:line-clamp-none leading-3 sm:leading-5">
+        <p class="header-profile-info_text text-info text-red-200 sm:line-clamp-none leading-3 sm:leading-5">
             {{ content.about }}
         </p>
-        <a class="header-profile-info_text w-fit mt-[-8px] text-xs underline sm:hidden cursor-pointer absolute left-0 bottom-[-16%] z-20"
+        <p class="header-profile-info_text w-fit mt-[-8px] text-xs underline sm:hidden cursor-pointer"
            data-tooltip-target="header-profile-info_tooltip"
+           data-tooltip-trigger="click"
         >
             View all
-        </a>
+        </p>
         <div id="header-profile-info_tooltip" role="tooltip"
              class="absolute z-10 sm:hidden invisible inline-block px-3 py-2 text-xs text-white transition-opacity duration-300 bg-blue-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-blue-950">
             {{ content.about }}
