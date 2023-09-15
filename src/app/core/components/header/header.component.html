@@ -4,7 +4,7 @@
              alt="Rounded avatar"
              height="800" width="800">
     </div>
-    <div class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%]">
+    <div class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%] relative">
         <h1 class="header-profile-info_title text-header font-extrabold dark:text-white">{{ content.name }}</h1>
 
         <p class="header-profile-info_subtitle text-subheader italic">
@@ -16,7 +16,7 @@
         <p class="header-profile-info_text text-info line-clamp-4 sm:line-clamp-none leading-3 sm:leading-5">
             {{ content.about }}
         </p>
-        <a class="header-profile-info_text w-fit mt-[-8px] text-xs underline sm:hidden cursor-pointer"
+        <a class="header-profile-info_text w-fit mt-[-8px] text-xs underline sm:hidden cursor-pointer absolute left-0 bottom-[-16%] z-20"
            data-tooltip-target="header-profile-info_tooltip"
         >
             View all
