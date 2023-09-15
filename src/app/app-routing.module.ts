@@ -5,7 +5,7 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+        loadChildren: () => import('@pages/main').then(m => m.MainModule)
     },
     { path: '**', pathMatch: 'full', redirectTo: '' },
 ];
