@@ -12,8 +12,12 @@
     <div class="container relative max-w-4xl bg-page bg-no-repeat bg-100% shadow-xl">
         <img ngSrc="assets/images/background.jpg" class="invisible" height="1280" width="905" alt="background">
 
-        <div class="wrapper absolute py-4 sm:py-12 w-wrapper-100% sm:w-wrapper-100%-sm h-full top-0">
-            <app-header></app-header>
+        <div class="wrapper">
+            <div class="body absolute w-full h-full flex flex-col p-4 sm:py-12 sm:px-10 top-0">
+                <app-header></app-header>
+            </div>
+
+            <app-footer></app-footer>
         </div>
     </div>
 </div>

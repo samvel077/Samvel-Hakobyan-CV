@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
-import { HeaderComponent } from "@core/components";
+import { FooterComponent, HeaderComponent } from "@core/components";
+import { SharedModule } from "@app/shared";
 
 @NgModule({
     declarations: [
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        SharedModule,
     ],
     exports: [
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
     ]
 })
 export class CoreModule {
