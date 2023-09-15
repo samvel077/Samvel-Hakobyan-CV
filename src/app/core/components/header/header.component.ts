@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tooltip } from "flowbite";
 
 @Component({
     selector: 'app-header',
@@ -24,6 +25,15 @@ export class HeaderComponent {
                     Develop efficient and reusable components and front-end solutions with ensuring a clear
                     dependency chain, in terms of both application logic as well as file relationships.`
         }
+    }
+
+    public openViewAllTooltip(): void {
+        const target = document.getElementById('header-profile-info_tooltip');
+        const trigger = document.getElementById('header-profile-info_tooltip-trigger')
+        const tooltip = new Tooltip(target, trigger, {
+            triggerType: 'none'
+        })
+        tooltip.show();
     }
 
 }
