@@ -27,9 +27,7 @@ export class HeaderComponent {
         }
     }
 
-    public openViewAllTooltip(): void {
-        const target = document.getElementById('header-profile-info_tooltip');
-        const trigger = document.getElementById('header-profile-info_tooltip-trigger')
+    public openViewAllTooltip(target: HTMLElement, trigger: HTMLElement): void {
         const tooltip = new Tooltip(target, trigger, {
             triggerType: 'none'
         })
