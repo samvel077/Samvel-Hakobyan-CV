@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SvgIconComponent } from "@shared/components";
+import { SvgIconComponent, TooltipComponent } from "@shared/components";
+import { TooltipDirective } from "@shared/directives/tooltip.directive";
 
 @NgModule({
     declarations: [
-        SvgIconComponent
+        SvgIconComponent,
+        TooltipDirective,
+        TooltipComponent,
     ],
     imports: [
         CommonModule
     ],
     exports: [
-        SvgIconComponent
+        SvgIconComponent,
+        TooltipDirective,
     ]
 })
 export class SharedModule {

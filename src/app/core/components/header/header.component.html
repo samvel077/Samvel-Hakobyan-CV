@@ -17,16 +17,9 @@
             {{ content.about }}
         </p>
         <p class="header-profile-info_text w-fit mt-[-8px] text-xs underline sm:hidden cursor-pointer"
-           data-tooltip-target="header-profile-info_tooltip"
-           data-tooltip-trigger="click"
-           data-tooltip-placement="bottom"
+           [tooltip]="content.about"
         >
             View all
         </p>
-        <div id="header-profile-info_tooltip" role="tooltip"
-             class="absolute z-10 sm:hidden invisible !right-auto !bottom-auto !inset-0 inline-block px-3 py-2 text-xs text-white transition-opacity duration-300 bg-blue-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-blue-950">
-            {{ content.about }}
-            <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
     </div>
 </header>

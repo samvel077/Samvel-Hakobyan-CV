@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { FooterComponent, HeaderComponent } from "@core/components";
-import { SharedModule } from "@app/shared";
+import { SharedModule } from "@app/shared/shared.module";
 
 @NgModule({
     declarations: [
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
     ],
     imports: [
         CommonModule,
