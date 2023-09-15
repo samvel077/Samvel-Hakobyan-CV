@@ -46,6 +46,10 @@
       &-info {
         @include adaptive-font(10, 16, 896);
       }
+
+      &-footer-info {
+        @include adaptive-font(13, 16, 896);
+      }
     }
   }
 }
