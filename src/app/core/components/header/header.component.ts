@@ -26,4 +26,8 @@ export class HeaderComponent {
         }
     }
 
+    public test(): void {
+        alert()
+    }
+
 }

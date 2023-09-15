@@ -13,12 +13,13 @@
             </mark>
         </p>
 
-        <p class="header-profile-info_text text-info text-red-200 sm:line-clamp-none leading-3 sm:leading-5">
+        <p class="header-profile-info_text text-info max-h-12 sm:max-h-none overflow-hidden leading-4 sm:leading-5">
             {{ content.about }}
         </p>
         <p class="header-profile-info_text w-fit mt-[-8px] text-xs underline sm:hidden cursor-pointer"
            data-tooltip-target="header-profile-info_tooltip"
            data-tooltip-trigger="click"
+           (click)="test()"
         >
             View all
         </p>
