@@ -51,6 +51,14 @@
       &-footer-info {
         @include adaptive-font(13, 16, 896);
       }
+
+      &-main-info-title {
+        @include adaptive-font(8, 18, 896);
+      }
+
+      &-main-info {
+        @include adaptive-font(8, 16, 896);
+      }
     }
   }
 }

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
-import { SharedModule } from "@app/shared/shared.module";
+import { SharedModule } from "@app/shared";
 import { CoreModule } from "@app/core";
-import { MainComponent, MainRoutingModule } from "@app/pages";
+import { MainComponent, MainInfoComponent, MainRoutingModule } from "@app/pages";
 
 @NgModule({
-    declarations: [MainComponent],
+    declarations: [MainComponent, MainInfoComponent],
     imports: [
         CommonModule,
         MainRoutingModule,
