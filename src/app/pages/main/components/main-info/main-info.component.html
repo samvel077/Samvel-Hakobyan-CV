@@ -1,9 +1,9 @@
 <main>
     <div class="main-info flex justify-between gap-2 sm:gap-6">
-        <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] justify-between gap-2.5 sm:gap-6">
+        <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] justify-between gap-3.5 sm:gap-8">
             <div class="main-info_education">
                 <p class="main-info_education_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-4 sm:px-10 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <mark class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         My Education
                     </mark>
                 </p>
@@ -18,11 +18,11 @@
             </div>
             <div class="main-info_qualifications">
                 <p class="main-info_qualifications_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-4 sm:px-6 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <mark class="px-5 sm:px-7 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         Key Qualifications
                     </mark>
                 </p>
-                <div class="main-info_qualifications_list ml-3 sm:ml-6">
+                <div class="main-info_qualifications_list ml-4 sm:ml-6">
                     <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let qualification of content.qualifications">
                             {{ qualification.info }}
@@ -32,11 +32,11 @@
             </div>
             <div class="main-info_languages">
                 <p class="main-info_languages_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-4 sm:px-6 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <mark class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         Languages
                     </mark>
                 </p>
-                <div class="main-info_languages_list ml-3 sm:ml-6">
+                <div class="main-info_languages_list ml-4 sm:ml-6">
                     <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let language of content.languages">
                             {{ language.info }}
