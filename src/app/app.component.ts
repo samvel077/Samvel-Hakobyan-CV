@@ -13,7 +13,6 @@ export class AppComponent implements AfterViewInit {
         // The etTimeout need for iPhone initialization issue
         setTimeout(() => {
             initFlowbite();
-            alert('done');
         }, 100)
     }
 
