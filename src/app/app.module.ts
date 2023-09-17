@@ -1,15 +1,10 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterOutlet } from "@angular/router";
 import { APP_BASE_HREF, NgOptimizedImage } from "@angular/common";
 
 import { AppComponent } from "@app/app.component";
 import { AppRoutingModule } from "@app/app-routing.module";
-import { initFlowbite } from "flowbite";
-
-export function initConfig(): object {
-    return () => initFlowbite();
-}
 
 @NgModule({
     declarations: [
@@ -27,12 +22,6 @@ export function initConfig(): object {
         // {
         //     provide: APP_BASE_HREF,
         //     useValue: environment.BASE_HREF
-        // },
-
-        // {
-        //     provide: APP_INITIALIZER,
-        //     useFactory: initConfig,
-        //     multi: true,
         // },
     ],
     bootstrap: [AppComponent]

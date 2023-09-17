@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+
 import { initFlowbite } from "flowbite";
 
 @Component({
@@ -9,10 +10,7 @@ import { initFlowbite } from "flowbite";
 export class AppComponent implements AfterViewInit {
 
     ngAfterViewInit() {
-        setTimeout(() => {
-            initFlowbite();
-            alert('done');
-        }, 5000)
+        initFlowbite();
     }
 
 }
