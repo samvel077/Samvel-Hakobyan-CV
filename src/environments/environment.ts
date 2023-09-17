@@ -3,5 +3,6 @@ export const environment = {
     // BASE_HREF: '/Samvel-Hakobyan-CV/',
 
     BASE_HREF: '',
+    BASE_URL: 'http://localhost:4200/',
     production: false,
 }

@@ -1,6 +1,6 @@
 <main>
     <div class="main-info flex justify-between gap-2 sm:gap-6">
-        <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] justify-between gap-3.5 sm:gap-8">
+        <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] gap-3.5 sm:gap-8">
             <div class="main-info_education">
                 <div class="main-info_education_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5 w-fit">
                     <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
@@ -8,7 +8,7 @@
                     </p>
                 </div>
                 <div class="main-info_education_list pl-2 sm:pl-3">
-                    <ul class="space-y-1.5 sm:space-y-2 text-blue-950 list-none list-inside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-2 text-blue-950 list-none list-inside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let education of content.education">
                             <b>{{ education.date }}</b>
                             <p class="mt-0.5">{{ education.info }}</p>
@@ -23,7 +23,7 @@
                     </p>
                 </div>
                 <div class="main-info_qualifications_list ml-4 sm:ml-6">
-                    <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let qualification of content.qualifications">
                             {{ qualification.info }}
                         </li>
@@ -37,7 +37,7 @@
                     </p>
                 </div>
                 <div class="main-info_languages_list ml-4 sm:ml-6">
-                    <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let language of content.languages">
                             {{ language.info }}
                         </li>
@@ -51,7 +51,7 @@
                     </p>
                 </div>
                 <div class="main-info_skills_list ml-4 sm:ml-6">
-                    <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let skill of content.skills">
                             <menu-dropdown [item]="skill"></menu-dropdown>
                         </li>
