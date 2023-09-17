@@ -9,6 +9,7 @@ import { initFlowbite } from "flowbite";
 })
 export class AppComponent implements AfterViewInit {
 
+    // The initFlowbite works only with single page applications
     ngAfterViewInit() {
         // The etTimeout need for iPhone initialization issue
         setTimeout(() => {

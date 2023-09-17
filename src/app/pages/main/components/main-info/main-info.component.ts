@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { DropdownOptions } from "flowbite";
+import { fileDownload } from "@app/core";
 
 @Component({
     selector: 'app-main-info',
@@ -10,8 +11,13 @@ import { DropdownOptions } from "flowbite";
 export class MainInfoComponent {
     public content: any;
 
+    private presentationFileUrls: string[] = [
+        'assets/pdf/Presentation.pdf',
+        'assets/pdf/Presentation-slides.pdf'
+    ]
+
     private dropdownOptions: DropdownOptions = {
-        triggerType: 'hover',
+        triggerType: 'none',
         delay: 100,
         offsetDistance: 2,
     }
@@ -24,11 +30,11 @@ export class MainInfoComponent {
         this.content = {
             education: [
                 {
-                    date: '2020-2021',
+                    date: '2020 - 2021',
                     info: 'Basic IT Center. Master of international Technology (IT).',
                 },
                 {
-                    date: '2021-2022',
+                    date: '2021 - 2022',
                     info: 'Angular - The Complete Guide American program',
                 }
             ],
@@ -159,5 +165,9 @@ export class MainInfoComponent {
                 }
             ]
         }
+    }
+
+    public downloadPresentationFiles(): void {
+        fileDownload(this.presentationFileUrls);
     }
 }

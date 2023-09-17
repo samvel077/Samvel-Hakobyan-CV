@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { createDropdown, IMenuDropdownItem } from "@app/core";
 import { DropdownOptions } from "flowbite";
 
@@ -15,8 +16,7 @@ export class MenuDropdownComponent {
             item.dropdownElement = createDropdown(targetId, triggerId, options);
             item.dropdownElement.show();
         } else {
-            item.dropdownElement.hide();
-            delete item.dropdownElement;
+            item.dropdownElement.isVisible() ? item.dropdownElement.hide() : item.dropdownElement.show()
         }
     }
 }

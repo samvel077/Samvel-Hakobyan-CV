@@ -2,11 +2,11 @@
     <div class="main-info flex justify-between gap-2 sm:gap-6">
         <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] justify-between gap-3.5 sm:gap-8">
             <div class="main-info_education">
-                <p class="main-info_education_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                <div class="main-info_education_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5 w-fit">
+                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         My Education
-                    </mark>
-                </p>
+                    </p>
+                </div>
                 <div class="main-info_education_list pl-2 sm:pl-3">
                     <ul class="space-y-1.5 sm:space-y-2 text-blue-950 list-none list-inside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let education of content.education">
@@ -17,11 +17,11 @@
                 </div>
             </div>
             <div class="main-info_qualifications">
-                <p class="main-info_qualifications_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-5 sm:px-7 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                <div class="main-info_qualifications_title text-main-info-title w-fit uppercase font-bold mb-2 sm:mb-3.5">
+                    <p class="px-5 sm:px-7 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         Key Qualifications
-                    </mark>
-                </p>
+                    </p>
+                </div>
                 <div class="main-info_qualifications_list ml-4 sm:ml-6">
                     <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let qualification of content.qualifications">
@@ -31,11 +31,11 @@
                 </div>
             </div>
             <div class="main-info_languages">
-                <p class="main-info_languages_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                <div class="main-info_languages_title w-fit text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
+                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         Languages
-                    </mark>
-                </p>
+                    </p>
+                </div>
                 <div class="main-info_languages_list ml-4 sm:ml-6">
                     <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let language of content.languages">
@@ -45,11 +45,11 @@
                 </div>
             </div>
             <div class="main-info_skills">
-                <p class="main-info_skills_title text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
-                    <mark class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                <div class="main-info_skills_title w-fit text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
+                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
                         Expertise Skill
-                    </mark>
-                </p>
+                    </p>
+                </div>
                 <div class="main-info_skills_list ml-4 sm:ml-6">
                     <ul class="space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let skill of content.skills">
@@ -59,6 +59,83 @@
                 </div>
             </div>
         </div>
-        <div class="main-info_second flex flex-col flex-[1_1_58%] md:flex-[1_1_65%]"></div>
+        <div class="main-info_second flex flex-col flex-[1_1_58%] md:flex-[1_1_65%]">
+            <div class="main-info_experience">
+                <div class="main-info_experience_title w-fit text-main-info-title uppercase font-bold mb-2 sm:mb-3.5">
+                    <p class="px-8 sm:px-12 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                        Professional Experiance
+                    </p>
+                </div>
+                <div class="main-info_experience_wrapper flex flex-col gap-5 sm:gap-10">
+                    <div class="main-info_experience_item pl-2 sm:pl-3">
+                        <ul class="space-y-1.5 sm:space-y-2 text-blue-950 list-none list-inside leading-none sm:leading-tight text-main-info">
+                            <li>
+                                <div class="flex justify-between text-subheader font-extrabold">
+                                    <span>Arnology LLC</span>
+                                    <span>2023 - 2023</span></div>
+                                <p class="mt-1 text-main-info font-bold">Angular Front-end Developer</p>
+                            </li>
+                            <li>
+                                Arnology LLC was an outsourcing company, where I worked as a freelancer. During my work,
+                                I
+                                participated in customer calls, conducted interviews and worked on various projects.
+                            </li>
+                            <li>
+                                <p class="font-bold">Projects:</p>
+                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                                    <li>EventSource (https://www.eventsource.ca/)</li>
+                                    <li>HYCM (https://www.hycm.com/en)</li>
+                                    <li>Q9 (https://www.q9capital.com/en) etc.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="font-bold">Technologies:</span>
+                                Angular, Boostrap, Angular Material, NG Boostrap, SwiperJs, RxJs, Moment.js, Email
+                                Templates etc.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="main-info_experience_item pl-2 sm:pl-3">
+                        <ul class="space-y-1.5 sm:space-y-2 text-blue-950 list-none list-inside leading-none sm:leading-tight text-main-info">
+                            <li>
+                                <div class="flex justify-between text-subheader font-extrabold"><span>Technamin</span>
+                                    <span>2023 - Present</span></div>
+                                <p class="mt-1 text-main-info font-bold">Middle Front-end Angular Developer</p>
+                            </li>
+                            <li>
+                                Technamin is the iGaming software provider. The Front-end team consisted of two groups.
+                                I was developing the admin platform where you can control and set up all Gaming
+                                websites and see their activity.
+                            </li>
+                            <li>
+                                <p class="font-bold">Responsibilities:</p>
+                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                                    <li>Develop efficient and reusable components and front-end solutions</li>
+                                    <li>Ensuring high performance of applications and providing support</li>
+                                    <li>Develop and maintain sufficient test coverage for all features</li>
+                                    <li>Participate in re-architecting our client-side solutions</li>
+                                    <li>Contributing ideas to our product development roadmap</li>
+                                    <li>Collaborate with internal teams to produce software design and architecture.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="font-bold">Achievement:</p>
+                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                                    <li>
+                                        Gave a presentation about Zone.js and Angular Signals.
+                                        <p class="underline cursor-pointer hover:font-bold"
+                                           (click)="downloadPresentationFiles()"
+                                        >
+                                            ( download PDF files )
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
