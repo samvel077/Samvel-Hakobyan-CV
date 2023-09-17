@@ -12,7 +12,8 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         setTimeout(() => {
             initFlowbite();
-        }, 0)
+            alert('done');
+        }, 500)
     }
 
 }
