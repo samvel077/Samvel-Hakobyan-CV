@@ -10,10 +10,11 @@ import { initFlowbite } from "flowbite";
 export class AppComponent implements AfterViewInit {
 
     ngAfterViewInit() {
+        // The etTimeout need for iPhone initialization issue
         setTimeout(() => {
             initFlowbite();
             alert('done');
-        }, 500)
+        }, 100)
     }
 
 }
