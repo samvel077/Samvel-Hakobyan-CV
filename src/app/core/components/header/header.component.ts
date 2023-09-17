@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Tooltip } from "flowbite";
+
+import { createTooltip } from "@app/core";
 
 @Component({
     selector: 'app-header',
@@ -27,10 +28,11 @@ export class HeaderComponent {
         }
     }
 
-    public openViewAllTooltip(target: HTMLElement, trigger: HTMLElement): void {
-        const tooltip = new Tooltip(target, trigger, {
-            triggerType: 'none'
+    public openViewAllTooltip(targetId: string, triggerId: string): void {
+        const tooltip = createTooltip(targetId, triggerId, {
+            triggerType: 'click'
         })
+
         tooltip.show();
     }
 

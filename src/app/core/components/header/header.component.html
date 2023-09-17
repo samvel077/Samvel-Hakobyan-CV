@@ -16,13 +16,13 @@
         <p class="header-profile-info_text text-info line-clamp-4 md:line-clamp-none leading-3 sm:leading-4 md:leading-5">
             {{ content.about }}
         </p>
-        <p #viewAllTooltipTrigger class="header-profile-info_text w-fit mt-[-8px] text-xs underline md:hidden cursor-pointer"
-           (click)="openViewAllTooltip(viewAllTooltipTarget, viewAllTooltipTrigger)"
+        <p id="view-all-tooltip-trigger" class="header-profile-info_text w-fit mt-[-8px] text-xs underline md:hidden cursor-pointer"
+           (click)="openViewAllTooltip('view-all-tooltip-target', 'view-all-tooltip-trigger')"
         >
             View all
         </p>
-        <div id="header-profile-info_tooltip" #viewAllTooltipTarget role="tooltip"
-             class="absolute z-10 sm:hidden invisible inline-block px-3 py-2 text-xs text-white transition-opacity duration-300 bg-blue-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-blue-950">
+        <div id="view-all-tooltip-target" role="tooltip"
+             class="header-profile-info_tooltip absolute z-10 md:hidden invisible inline-block px-3 py-2 text-xs text-white transition-opacity duration-300 bg-blue-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-blue-950">
             {{ content.about }}
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>

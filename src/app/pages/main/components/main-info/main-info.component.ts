@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { DropdownOptions } from "flowbite";
+
 @Component({
     selector: 'app-main-info',
     templateUrl: './main-info.component.html',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class MainInfoComponent {
     public content: any;
+
+    private dropdownOptions: DropdownOptions = {
+        triggerType: 'hover',
+        delay: 100,
+        offsetDistance: 2,
+    }
 
     constructor() {
         this.initContent();
@@ -50,6 +58,104 @@ export class MainInfoComponent {
                 },
                 {
                     info: 'Russian-Upper intermediate'
+                }
+            ],
+            skills: [
+                {
+                    name: 'Main Stack',
+                    dropdown: {
+                        id: 'main-stack-dropdown',
+                        items: [
+                            {
+                                name: 'HTML 5'
+                            },
+                            {
+                                name: 'CSS 3',
+                                dropdown: {
+                                    id: 'css-dropdown',
+                                    items: [
+                                        {
+                                            name: 'SASS, SCSS'
+                                        },
+                                        {
+                                            name: 'Bootstrap'
+                                        },
+                                        {
+                                            name: 'Tailwind'
+                                        }
+                                    ],
+                                    options: {
+                                        ...this.dropdownOptions,
+                                        placement: 'right'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'JavaScript'
+                            },
+                            {
+                                name: 'Angular'
+                            },
+                            {
+                                name: 'TypeScript'
+                            },
+                            {
+                                name: 'RxJs'
+                            }
+                        ],
+                        options: this.dropdownOptions
+                    }
+                },
+                {
+                    name: 'Angular Libraries',
+                    dropdown: {
+                        id: 'angular-libraries-dropdown',
+                        items: [
+                            {
+                                name: 'Angular Material ( UI )'
+                            },
+                            {
+                                name: 'NG-Bootstrap ( UI )'
+                            },
+                            {
+                                name: 'PrimeNG ( UI )'
+                            },
+                            {
+                                name: 'Ag Grid ( UI Table )'
+                            },
+                            {
+                                name: 'NgRx ( State Management )'
+                            }
+                        ],
+                        options: this.dropdownOptions
+                    }
+                },
+                {
+                    name: 'Version Control',
+                    dropdown: {
+                        id: 'version-control-dropdown',
+                        items: [
+                            {
+                                name: 'Git'
+                            },
+                            {
+                                name: 'GitHub'
+                            },
+                            {
+                                name: 'Azure Devops'
+                            },
+                            {
+                                name: 'Bitbucket'
+                            }
+                        ],
+                        options: this.dropdownOptions
+                    }
+                },
+                {
+                    name: 'Communication with Database'
+                },
+                {
+                    name: 'JavaScript Packages'
                 }
             ]
         }
