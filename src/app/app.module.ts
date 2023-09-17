@@ -29,11 +29,11 @@ export function initConfig(): object {
         //     useValue: environment.BASE_HREF
         // },
 
-        {
-            provide: APP_INITIALIZER,
-            useFactory: initConfig,
-            multi: true,
-        },
+        // {
+        //     provide: APP_INITIALIZER,
+        //     useFactory: initConfig,
+        //     multi: true,
+        // },
     ],
     bootstrap: [AppComponent]
 })
