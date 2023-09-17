@@ -10,7 +10,9 @@ import { initFlowbite } from "flowbite";
 export class AppComponent implements AfterViewInit {
 
     ngAfterViewInit() {
-        initFlowbite();
+        setTimeout(() => {
+            initFlowbite();
+        }, 0)
     }
 
 }
