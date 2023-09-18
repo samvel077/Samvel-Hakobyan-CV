@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { DropdownOptions } from "flowbite";
 import { fileDownload } from "@app/core";
+import { bottom } from "@popperjs/core";
 
 @Component({
     selector: 'app-main-info',
@@ -17,6 +18,7 @@ export class MainInfoComponent {
     ]
 
     private dropdownOptions: DropdownOptions = {
+        placement: 'bottom-start',
         triggerType: 'none',
         delay: 100,
         offsetDistance: 2,
@@ -57,13 +59,13 @@ export class MainInfoComponent {
             ],
             languages: [
                 {
-                    info: 'Armenian-Native',
+                    info: 'Armenian - Native',
                 },
                 {
-                    info: 'English- Intermediate',
+                    info: 'English - Intermediate',
                 },
                 {
-                    info: 'Russian-Upper intermediate'
+                    info: 'Russian - Upper intermediate'
                 }
             ],
             skills: [
@@ -93,7 +95,9 @@ export class MainInfoComponent {
                                     options: {
                                         ...this.dropdownOptions,
                                         placement: 'right'
-                                    }
+                                    },
+                                    // set nested element left as mush as the dropdown paddings
+                                    classes: '!left-2 sm:!left-4'
                                 }
                             },
                             {
@@ -158,10 +162,31 @@ export class MainInfoComponent {
                     }
                 },
                 {
+                    name: 'Programing Tools',
+                    dropdown: {
+                        id: 'programing-tools-dropdown',
+                        items: [
+                            {
+                                name: 'WebStorm'
+                            },
+                            {
+                                name: 'VS Code'
+                            },
+                            {
+                                name: 'Git Fork'
+                            }
+                        ],
+                        options: this.dropdownOptions
+                    }
+                },
+                {
                     name: 'Communication with Database'
                 },
                 {
                     name: 'JavaScript Packages'
+                },
+                {
+                    name: 'WebSocket and Rest API'
                 }
             ]
         }

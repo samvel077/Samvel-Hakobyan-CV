@@ -9,4 +9,5 @@ export interface IMenuDropdown {
     id: string;
     items: IMenuDropdownItem[];
     options: DropdownOptions;
+    classes?: string;
 }

@@ -7,7 +7,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'serif': ['avenir-next-regular', 'sans-serif'],
+                'serif': ['avenir-next', 'sans-serif'],
             },
             colors: {
                 blue: {
