@@ -4,5 +4,6 @@ export const environment = {
     // the baseHref must be between / / this lines
     BASE_HREF: '/Samvel-Hakobyan-CV/',
     BASE_URL: 'https://samvel077.github.io/Samvel-Hakobyan-CV/',
+    PATH: '/Samvel-Hakobyan-CV',
     production: true,
 }

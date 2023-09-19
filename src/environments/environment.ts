@@ -4,5 +4,6 @@ export const environment = {
 
     BASE_HREF: '',
     BASE_URL: 'http://localhost:4200/',
+    PATH: '/',
     production: false,
 }

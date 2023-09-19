@@ -4,6 +4,7 @@ import { Modal } from "flowbite";
 import { CookieService } from "ngx-cookie-service";
 
 import { createModal } from "@app/core";
+import { environment } from "@environments/environment";
 
 @Component({
     selector: 'app-main-info-modal',
@@ -26,7 +27,7 @@ export class MainInfoModalComponent implements OnInit {
                     const expires = time + 3600 * 1000;
                     now.setTime(expires);
 
-                    this.cookieService.set('main-info-modal-closed', 'true', now, '/')
+                    this.cookieService.set('main-info-modal-closed', 'true', now, environment.PATH)
                 }
             });
 
