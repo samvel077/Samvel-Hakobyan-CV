@@ -6,7 +6,7 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'prefix',
-        loadChildren: () => import('@pages/main').then(m => m.MainModule)
+        loadChildren: () => import('@pages/main/main.module').then(m => m.MainModule)
     },
     { path: '**', redirectTo: '' },
 ];

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterOutlet } from "@angular/router";
-import { APP_BASE_HREF, NgOptimizedImage } from "@angular/common";
+import { APP_BASE_HREF } from "@angular/common";
 
 import { AppComponent } from "@app/app.component";
 import { AppRoutingModule } from "@app/app-routing.module";

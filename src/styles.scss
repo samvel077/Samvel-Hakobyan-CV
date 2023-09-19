@@ -59,6 +59,10 @@
       &-main-info {
         @include adaptive-font(8, 16, 896);
       }
+
+      &-modal-info {
+        @include adaptive-font(12, 16, 896);
+      }
     }
   }
 }
