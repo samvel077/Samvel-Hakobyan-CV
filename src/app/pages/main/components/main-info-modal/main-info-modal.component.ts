@@ -37,4 +37,8 @@ export class MainInfoModalComponent implements OnInit {
     private openModal(): void {
         this.modalRef.show();
     }
+
+    public closeModal(): void {
+        this.modalRef.hide();
+    }
 }
