@@ -33,6 +33,10 @@ jobs:
       - name: Build Project
         run: npm run build:prod
 
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
