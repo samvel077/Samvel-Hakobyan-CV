@@ -33,14 +33,11 @@ jobs:
       - name: Build Project
         run: npm run build:prod
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          source: ./docs
-          destination: ./_site
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+          name: 'docs'
+          path: ./docs
 
   deploy:
     environment:
