@@ -33,12 +33,6 @@ jobs:
       - name: Build Project
         run: npm run build:prod
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          name: bundle
-          path: ./
-
   deploy:
     environment:
       name: github-pages
