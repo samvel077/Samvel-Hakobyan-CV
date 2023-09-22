@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -33,11 +33,11 @@ jobs:
       - name: Build Project
         run: npm run build:prod
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-artifact@v2
         with:
-          name: 'docs'
-          path: ./
+          name: build
+          path: docs/
 
   deploy:
     environment:
