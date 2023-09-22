@@ -1,4 +1,4 @@
-name: pages build and deployment
+name: build and deploy
 
 on:
   push:
@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   build:
-    name: pages build and deployment
     runs-on: ubuntu-latest
 
     steps:
