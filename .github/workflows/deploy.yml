@@ -37,8 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           name: page
-          path: docs
-          if-no-files-found: error
+          path: ./
 
   deploy:
     environment:
