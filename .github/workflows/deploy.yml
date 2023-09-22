@@ -36,10 +36,10 @@ jobs:
           node src/assets/scripts/create-404-html.js
 #
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: build
-          path: docs
+          path: docs/*
 
   deploy:
     environment:
