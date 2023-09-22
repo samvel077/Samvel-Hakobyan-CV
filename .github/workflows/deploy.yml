@@ -28,7 +28,7 @@ jobs:
           node-version: 18.16.0
 
       - name: Install Angular CLI
-        run: npm run build:prod
+        run: npm install @angular/cli
 
       - name: Install Dependencies
         run: npm install
