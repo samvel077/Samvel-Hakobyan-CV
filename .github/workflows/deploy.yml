@@ -31,14 +31,11 @@ jobs:
         run: npm install
 
       - name: Build Project
-        uses: fountainhead/action-wait-for-check@v1.1.0
-        id: wait-for-build
         run: npm run build:prod
-
-      - name: List files in the repository
-        if: steps.wait-for-build.outputs.conclusion == 'success'
-        run: |
-          ls ${{ github.workspace }}
+#
+#      - name: List files in the repository
+#        run: |
+#          ls ${{ github.workspace }}
 
 #      - name: Build with Jekyll
 #        uses: actions/jekyll-build-pages@v1
