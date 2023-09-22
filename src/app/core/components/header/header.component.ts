@@ -16,7 +16,7 @@ export class HeaderComponent {
 
     private initContent(): void {
         this.content = {
-            name: 'Samvel Hakobyan',
+            name: 'Samvel Hakobyan Test',
             position: 'Front-end Angular Developer',
             about: `Front-end Developer with over 3 years experience.
                     I specialize in JavaScript and have professional experience working with Angular.
