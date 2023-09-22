@@ -56,7 +56,6 @@
           },
           "configurations": {
             "production": {
-              "outputPath": "docs",
               "baseHref": "/Samvel-Hakobyan-CV/",
               "budgets": [
                 {
