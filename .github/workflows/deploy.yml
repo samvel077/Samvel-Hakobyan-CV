@@ -27,12 +27,12 @@ jobs:
 
       - name: Build Project
         run: npm run build:prod
-        with:
-          source: ./
-          destination: ./_site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          source: ./
+          destination: ./_site
 
   deploy:
     environment:
