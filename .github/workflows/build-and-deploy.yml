@@ -35,14 +35,16 @@ jobs:
           npm run build:prod
           node src/assets/scripts/create-404-html.js
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs
-          destination: ./_site
+#      - name: Build with Jekyll
+#        uses: actions/jekyll-build-pages@v1
+#        with:
+#          source: ./docs
+#          destination: ./_site
 #
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: docs
 
   deploy:
     environment:
