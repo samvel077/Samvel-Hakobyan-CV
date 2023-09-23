@@ -35,11 +35,19 @@ jobs:
           npm run build:prod
           node src/assets/scripts/create-404-html.js
 
-#      - name: Build with Jekyll
-#        uses: actions/jekyll-build-pages@v1
-#        with:
-#          source: ./docs
-#          destination: ./_site
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          destination: ./_site
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
 #
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
