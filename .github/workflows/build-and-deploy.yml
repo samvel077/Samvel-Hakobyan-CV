@@ -33,9 +33,9 @@ jobs:
       - name: Build Project
         run: |
           npm run build:prod
-#         After "build:prod" command automatically will work the "postbuild:prod" command which declared in package.json
-#         If we don't declare the "postbuild:prod" command we need to run it manually by opening comment below
           node src/assets/scripts/create-404-html.js
+#         After "build:prod" command automatically will work the "postbuild:prod" command which declared in package.json
+#         If we don't declare the "postbuild:prod" command we need to run it manually by opening comment above
 
 #      The default folder from where the artifacts take files is _site, with path option you change the folder
 #      If you don't wont to use this option just change the folder name from docs to _site after build in angular.json
