@@ -1,8 +1,9 @@
 {
   "name": "Samvel-Hakobyan-CV",
   "short_name": "Samvel-Hakobyan-CV",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "description": "This is an interactive and responsive CV made with Angular",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
@@ -55,5 +56,21 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
+  ],
+   "screenshots": [
+      {
+        "src": "assets/CV-preview-desktop.png",
+        "sizes": "1024x1536",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Interactive and Responsive CV"
+      },
+      {
+        "src": "assets/CV-preview-mobile.png",
+        "sizes": "540x810",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Interactive and Responsive CV CV"
+      }
   ]
 }

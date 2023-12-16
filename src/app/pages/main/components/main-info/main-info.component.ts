@@ -187,6 +187,9 @@ export class MainInfoComponent {
                 },
                 {
                     name: 'WebSocket and Rest API'
+                },
+                {
+                    name: 'PWA, Service and Web workers'
                 }
             ]
         }

@@ -6,6 +6,6 @@ fs.copyFile(filePath, copy, (error) => {
     if (error) {
         throw error
     } else {
-        console.log('File has been moved to another folder.')
+        console.log('404.html file successfully created.')
     }
 })

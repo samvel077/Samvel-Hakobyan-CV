@@ -33,6 +33,8 @@ jobs:
       - name: Build Project
         run: |
           npm run build:prod
+#         After "build:prod" command automatically will work the "postbuild:prod" command which declared in package.json
+#         If we don't declare the "postbuild:prod" command we need to run it manually by opening comment below
           node src/assets/scripts/create-404-html.js
 
 #      The default folder from where the artifacts take files is _site, with path option you change the folder
