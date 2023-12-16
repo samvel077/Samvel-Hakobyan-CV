@@ -1,15 +1,15 @@
-<main>
+<main *ngIf="content$ | async as content; else loading">
     <div class="main-info flex justify-between gap-2 sm:gap-6">
         <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] gap-3.5 sm:gap-8">
             <div class="main-info_education">
                 <div class="main-info_education_title text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5 w-fit">
                     <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
-                        My Education
+                        {{ content.education.title }}
                     </p>
                 </div>
                 <div class="main-info_education_list pl-2 sm:pl-3">
                     <ul class="space-y-2 text-blue-950 list-none list-inside text-main-info leading-none sm:leading-tight">
-                        <li *ngFor="let education of content.education">
+                        <li *ngFor="let education of content.education.items">
                             <p class="font-semibold">{{ education.date }}</p>
                             <p class="mt-0.5">{{ education.info }}</p>
                         </li>
@@ -19,12 +19,12 @@
             <div class="main-info_qualifications">
                 <div class="main-info_qualifications_title text-main-info-title w-fit uppercase font-semibold mb-2 sm:mb-3.5">
                     <p class="px-5 sm:px-7 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
-                        Key Qualifications
+                        {{ content.qualifications.title }}
                     </p>
                 </div>
                 <div class="main-info_qualifications_list ml-4 sm:ml-6">
                     <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                        <li *ngFor="let qualification of content.qualifications">
+                        <li *ngFor="let qualification of content.qualifications.items">
                             {{ qualification.info }}
                         </li>
                     </ul>
@@ -33,12 +33,12 @@
             <div class="main-info_languages">
                 <div class="main-info_languages_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
                     <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
-                        Languages
+                        {{ content.languages.title }}
                     </p>
                 </div>
                 <div class="main-info_languages_list ml-4 sm:ml-6">
                     <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                        <li *ngFor="let language of content.languages">
+                        <li *ngFor="let language of content.languages.items">
                             {{ language.info }}
                         </li>
                     </ul>
@@ -47,12 +47,12 @@
             <div class="main-info_skills">
                 <div class="main-info_skills_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
                     <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
-                        Expertise Skill
+                        {{ content.skills.title }}
                     </p>
                 </div>
                 <div class="main-info_skills_list ml-4 sm:ml-6">
                     <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                        <li *ngFor="let skill of content.skills">
+                        <li *ngFor="let skill of content.skills.items">
                             <menu-dropdown [item]="skill"></menu-dropdown>
                         </li>
                     </ul>
@@ -117,8 +117,7 @@
                                     <li>Develop and maintain sufficient test coverage for all features</li>
                                     <li>Participate in re-architecting our client-side solutions</li>
                                     <li>Contributing ideas to our product development roadmap</li>
-                                    <li>Collaborate with internal teams to produce software design and architecture.
-                                    </li>
+                                    <li>Collaborate with internal teams to produce software design and architecture.</li>
                                 </ul>
                             </li>
                             <li>
@@ -144,3 +143,39 @@
         </div>
     </div>
 </main>
+
+<ng-template #loading>
+    <div role="status" class="space-y-2.5 animate-pulse">
+        <div class="flex items-center w-full">
+            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+        </div>
+        <div class="flex items-center w-full">
+            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+        </div>
+        <div class="flex items-center w-full">
+            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+        </div>
+        <div class="flex items-center w-full">
+            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+        </div>
+        <div class="flex items-center w-full">
+            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-32"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+        </div>
+        <div class="flex items-center w-full">
+            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+        </div>
+        <span class="sr-only">Loading...</span>
+    </div>
+</ng-template>

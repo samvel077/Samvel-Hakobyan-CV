@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-import { createDropdown, IMenuDropdownItem } from "@app/core";
 import { DropdownOptions } from "flowbite";
+
+import { createDropdown, IMenuDropdownItem } from "@app/core";
 
 @Component({
     selector: 'menu-dropdown',

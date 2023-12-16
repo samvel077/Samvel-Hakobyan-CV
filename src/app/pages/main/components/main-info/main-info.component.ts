@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Observable } from "rxjs";
 
-import { DropdownOptions } from "flowbite";
 import { fileDownload } from "@app/core";
-import { bottom } from "@popperjs/core";
+import { MainService } from "@pages/main/services/main.service";
+import { IMainInfo } from "@core/interfaces/main-info.interface";
 
 @Component({
     selector: 'app-main-info',
@@ -10,189 +11,19 @@ import { bottom } from "@popperjs/core";
     styleUrls: ['./main-info.component.scss']
 })
 export class MainInfoComponent {
-    public content: any;
+    public content$: Observable<IMainInfo>;
 
     private presentationFileUrls: string[] = [
         'assets/pdf/Presentation.pdf',
         'assets/pdf/Presentation-slides.pdf'
     ]
 
-    private dropdownOptions: DropdownOptions = {
-        placement: 'bottom-start',
-        triggerType: 'none',
-        delay: 100,
-        offsetDistance: 2,
-    }
-
-    constructor() {
+    constructor(private mainService: MainService) {
         this.initContent();
     }
 
     private initContent(): void {
-        this.content = {
-            education: [
-                {
-                    date: '2020 - 2021',
-                    info: 'Basic IT Center. Master of international Technology (IT).',
-                },
-                {
-                    date: '2021 - 2022',
-                    info: 'Angular - The Complete Guide American program',
-                }
-            ],
-            qualifications: [
-                {
-                    info: 'Complaint Resolution',
-                },
-                {
-                    info: 'Effective Communication'
-                },
-                {
-                    info: 'Team-building & Training',
-                },
-                {
-                    info: 'Patience & Empathy',
-                },
-                {
-                    info: 'Ability to Keep Calm under Pressure or in Stressful Situations',
-                }
-            ],
-            languages: [
-                {
-                    info: 'Armenian - Native',
-                },
-                {
-                    info: 'English - Intermediate',
-                },
-                {
-                    info: 'Russian - Upper intermediate'
-                }
-            ],
-            skills: [
-                {
-                    name: 'Main Stack',
-                    dropdown: {
-                        id: 'main-stack-dropdown',
-                        items: [
-                            {
-                                name: 'HTML 5'
-                            },
-                            {
-                                name: 'CSS 3',
-                                dropdown: {
-                                    id: 'css-dropdown',
-                                    items: [
-                                        {
-                                            name: 'SASS, SCSS'
-                                        },
-                                        {
-                                            name: 'Bootstrap'
-                                        },
-                                        {
-                                            name: 'Tailwind'
-                                        }
-                                    ],
-                                    options: {
-                                        ...this.dropdownOptions,
-                                        placement: 'right'
-                                    },
-                                    // set nested element left as mush as the dropdown paddings
-                                    classes: '!left-2 sm:!left-4'
-                                }
-                            },
-                            {
-                                name: 'JavaScript'
-                            },
-                            {
-                                name: 'Angular'
-                            },
-                            {
-                                name: 'TypeScript'
-                            },
-                            {
-                                name: 'RxJs'
-                            }
-                        ],
-                        options: this.dropdownOptions
-                    }
-                },
-                {
-                    name: 'Angular Libraries',
-                    dropdown: {
-                        id: 'angular-libraries-dropdown',
-                        items: [
-                            {
-                                name: 'Angular Material ( UI )'
-                            },
-                            {
-                                name: 'NG-Bootstrap ( UI )'
-                            },
-                            {
-                                name: 'PrimeNG ( UI )'
-                            },
-                            {
-                                name: 'Ag Grid ( UI Table )'
-                            },
-                            {
-                                name: 'NgRx ( State Management )'
-                            }
-                        ],
-                        options: this.dropdownOptions
-                    }
-                },
-                {
-                    name: 'Version Control',
-                    dropdown: {
-                        id: 'version-control-dropdown',
-                        items: [
-                            {
-                                name: 'Git'
-                            },
-                            {
-                                name: 'GitHub'
-                            },
-                            {
-                                name: 'Azure Devops'
-                            },
-                            {
-                                name: 'Bitbucket'
-                            }
-                        ],
-                        options: this.dropdownOptions
-                    }
-                },
-                {
-                    name: 'Programing Tools',
-                    dropdown: {
-                        id: 'programing-tools-dropdown',
-                        items: [
-                            {
-                                name: 'WebStorm'
-                            },
-                            {
-                                name: 'VS Code'
-                            },
-                            {
-                                name: 'Git Fork'
-                            }
-                        ],
-                        options: this.dropdownOptions
-                    }
-                },
-                {
-                    name: 'Communication with Database'
-                },
-                {
-                    name: 'JavaScript Packages'
-                },
-                {
-                    name: 'WebSocket and Rest API'
-                },
-                {
-                    name: 'PWA, Service and Web workers'
-                }
-            ]
-        }
+        this.content$ = this.mainService.getMainContent();
     }
 
     public downloadPresentationFiles(): void {

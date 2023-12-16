@@ -1,0 +1,198 @@
+{
+  "education": {
+    "title": "My Education",
+    "items": [
+      {
+        "date": "2020 - 2021",
+        "info": "Basic IT Center. Master of international Technology (IT)."
+      },
+      {
+        "date": "2021 - 2022",
+        "info": "Angular - The Complete Guide American program"
+      }
+    ]
+  },
+  "qualifications": {
+    "title": "Key Qualifications",
+    "items": [
+      {
+        "info": "Complaint Resolution"
+      },
+      {
+        "info": "Effective Communication"
+      },
+      {
+        "info": "Team-building & Training"
+      },
+      {
+        "info": "Patience & Empathy"
+      },
+      {
+        "info": "Ability to Keep Calm under Pressure or in Stressful Situations"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "items": [
+      {
+        "info": "Armenian - Native"
+      },
+      {
+        "info": "English - Intermediate"
+      },
+      {
+        "info": "Russian - Upper intermediate"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Expertise Skill",
+    "items": [
+      {
+        "name": "Main Stack",
+        "dropdown": {
+          "id": "main-stack-dropdown",
+          "items": [
+            {
+              "name": "HTML 5"
+            },
+            {
+              "name": "CSS 3",
+              "dropdown": {
+                "id": "css-dropdown",
+                "items": [
+                  {
+                    "name": "SASS, SCSS"
+                  },
+                  {
+                    "name": "Bootstrap"
+                  },
+                  {
+                    "name": "Tailwind"
+                  }
+                ],
+                "options": {
+                  "placement": "right",
+                  "triggerType": "none",
+                  "delay": 100,
+                  "offsetDistance": 2
+                },
+                "_comment": "set nested element left as mush as the dropdown paddings",
+                "classes": "!left-2 sm:!left-4"
+              }
+            },
+            {
+              "name": "JavaScript"
+            },
+            {
+              "name": "Angular"
+            },
+            {
+              "name": "TypeScript"
+            },
+            {
+              "name": "RxJs"
+            }
+          ],
+          "options": {
+            "placement": "bottom-start",
+            "triggerType": "none",
+            "delay": 100,
+            "offsetDistance": 2
+          }
+        }
+      },
+      {
+        "name": "Angular Libraries",
+        "dropdown": {
+          "id": "angular-libraries-dropdown",
+          "items": [
+            {
+              "name": "Angular Material ( UI )"
+            },
+            {
+              "name": "NG-Bootstrap ( UI )"
+            },
+            {
+              "name": "PrimeNG ( UI )"
+            },
+            {
+              "name": "Ag Grid ( UI Table )"
+            },
+            {
+              "name": "NgRx ( State Management )"
+            }
+          ],
+          "options": {
+            "placement": "bottom-start",
+            "triggerType": "none",
+            "delay": 100,
+            "offsetDistance": 2
+          }
+        }
+      },
+      {
+        "name": "Version Control",
+        "dropdown": {
+          "id": "version-control-dropdown",
+          "items": [
+            {
+              "name": "Git"
+            },
+            {
+              "name": "GitHub"
+            },
+            {
+              "name": "Azure Devops"
+            },
+            {
+              "name": "Bitbucket"
+            }
+          ],
+          "options": {
+            "placement": "bottom-start",
+            "triggerType": "none",
+            "delay": 100,
+            "offsetDistance": 2
+          }
+        }
+      },
+      {
+        "name": "Programing Tools",
+        "dropdown": {
+          "id": "programing-tools-dropdown",
+          "items": [
+            {
+              "name": "WebStorm"
+            },
+            {
+              "name": "VS Code"
+            },
+            {
+              "name": "Git Fork"
+            }
+          ],
+          "options": {
+            "placement": "bottom-start",
+            "triggerType": "none",
+            "delay": 100,
+            "offsetDistance": 2
+          }
+        }
+      },
+      {
+        "name": "Communication with Database"
+      },
+      {
+        "name": "JavaScript Packages"
+      },
+      {
+        "name": "WebSocket and Rest API"
+      },
+      {
+        "name": "PWA, Service and Web workers"
+      }
+    ]
+  }
+}
