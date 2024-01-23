@@ -18,7 +18,7 @@ export class HeaderComponent {
         this.content = {
             name: 'Samvel Hakobyan',
             position: 'Front-end Angular Developer',
-            about: `Front-end Developer with over 3 years experience.
+            about: `Front-end Developer with over 4 years experience.
                     I specialize in JavaScript and have professional experience working with Angular.
                     During this time, I have faced various challenges and managed to offer the most
                     optimal and the best solutions.

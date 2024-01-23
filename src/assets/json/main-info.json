@@ -171,6 +171,12 @@
             },
             {
               "name": "Git Fork"
+            },
+            {
+              "name": "Jira"
+            },
+            {
+              "name": "Scrum"
             }
           ],
           "options": {
@@ -192,6 +198,9 @@
       },
       {
         "name": "PWA, Service and Web workers"
+      },
+      {
+        "name": "Object Oriented Programing"
       }
     ]
   }
