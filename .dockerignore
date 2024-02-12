@@ -5,6 +5,8 @@ README.md
 # GIT
 .gitignore
 .github
+.git
 
 # Editor
 .editorconfig
+.idea
