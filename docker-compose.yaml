@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  samvel-sakobyan-cv-develop:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#      target: develop
+#    container_name: cv-dev-c
+    image: cv
+    ports:
+      - '4200:4200'
+    volumes:
+      - .:/usr/src/app
+    stdin_open: true
+    tty: true
+#  samvel-sakobyan-cv-prod:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#      target: prod
+#    container_name: cv-prod-c
+#    ports:
+#      - '80:80'

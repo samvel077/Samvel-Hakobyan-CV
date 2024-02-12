@@ -1,0 +1,10 @@
+.angular
+node_modules
+README.md
+
+# GIT
+.gitignore
+.github
+
+# Editor
+.editorconfig
