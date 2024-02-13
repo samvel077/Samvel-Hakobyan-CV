@@ -28,4 +28,4 @@ jobs:
           context: .
           file: Dockerfile-prod
           push: true
-          tags: docker.pkg.github.com/samvel-hakobyan-cv/samvel-hakobyan-cv:latest
+          tags: ghcr.io/samvel077/samvel-hakobyan-cv:latest
