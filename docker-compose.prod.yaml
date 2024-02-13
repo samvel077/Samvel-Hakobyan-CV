@@ -1,9 +1,6 @@
 version: "3.8"
 services:
   samvel-hakobyan-cv:
-#    image: cv
-    build:
-      context: .
-      dockerfile: Dockerfile-prod
+    image: ghcr.io/samvel077/samvel-hakobyan-cv:main
     ports:
       - '80:80'
