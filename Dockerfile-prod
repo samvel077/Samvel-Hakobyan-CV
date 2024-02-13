@@ -16,9 +16,7 @@ WORKDIR usr/src/app
 
 RUN npm run build:prod
 
-FROM nginx:latest
-
-WORKDIR usr/src/app
+FROM nginx:alpine AS prod
 
 COPY --from=builder /usr/src/app/docs /usr/share/nginx/html
 

@@ -6,11 +6,11 @@ COPY package*.json .
 
 RUN npm install -g @angular/cli
 
+RUN npm install
+
 COPY . .
 
 FROM base AS develop
-
-RUN npm install
 
 VOLUME /usr/src/app/node_modules
 

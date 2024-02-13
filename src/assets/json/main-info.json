@@ -188,6 +188,9 @@
         }
       },
       {
+        "name": "Docker"
+      },
+      {
         "name": "Communication with Database"
       },
       {
