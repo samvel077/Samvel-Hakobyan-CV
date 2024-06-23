@@ -9,7 +9,7 @@
     >
         <span>{{ item.name }}</span>
         <svg-icon iconName="menu-arrow"
-                  [classes]="'w-[6px] h-[7px] sm:w-2.5 sm:h-2.5 ml-1.5 sm:ml-2.5 transition ' + (item.dropdownElement?.isVisible() ? 'rotate-180' : '')"></svg-icon>
+                  [classes]="'w-[6px] h-[7px] sm:w-2.5 sm:h-2.5 ml-1.5 sm:ml-2.5 transition ' + (item.dropdownElement?.isVisible() ? 'rotate-180' : '')" />
     </button>
     <div [id]="item.dropdown.id + '-target'"
          [ngClass]="item.dropdown.classes"

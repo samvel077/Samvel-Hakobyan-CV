@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from "rxjs";
 
 import { fileDownload } from "@app/core";
@@ -8,7 +8,8 @@ import { IMainInfo } from "@core/interfaces/main-info.interface";
 @Component({
     selector: 'app-main-info',
     templateUrl: './main-info.component.html',
-    styleUrls: ['./main-info.component.scss']
+    styleUrl: './main-info.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainInfoComponent {
     public content$: Observable<IMainInfo>;

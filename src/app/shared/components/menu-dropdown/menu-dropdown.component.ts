@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { DropdownOptions } from "flowbite";
 
@@ -7,7 +7,8 @@ import { createDropdown, IMenuDropdownItem } from "@app/core";
 @Component({
     selector: 'menu-dropdown',
     templateUrl: './menu-dropdown.component.html',
-    styleUrls: ['./menu-dropdown.component.scss']
+    styleUrl: './menu-dropdown.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuDropdownComponent {
     @Input() item: IMenuDropdownItem;

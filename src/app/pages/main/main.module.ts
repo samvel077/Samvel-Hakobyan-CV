@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { AsyncPipe, NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from "@angular/common/http";
 
 import { SharedModule } from "@shared/shared.module";
@@ -9,20 +9,22 @@ import { MainRoutingModule } from "@pages/main/main-routing.module";
 import { MainService } from "@pages/main/services/main.service";
 
 @NgModule({
-    declarations: [
-        MainComponent,
-        MainInfoComponent,
-        MainInfoModalComponent
-    ],
-    imports: [
-        CommonModule,
-        MainRoutingModule,
-        SharedModule,
-        CoreModule,
-        NgOptimizedImage,
-        HttpClientModule,
-    ],
-    providers: [MainService]
+  declarations: [
+    MainComponent,
+    MainInfoComponent,
+    MainInfoModalComponent
+  ],
+  imports: [
+    MainRoutingModule,
+    SharedModule,
+    CoreModule,
+    NgOptimizedImage,
+    HttpClientModule,
+    NgIf,
+    AsyncPipe,
+    NgForOf,
+  ],
+  providers: [MainService]
 })
 export class MainModule {
 }

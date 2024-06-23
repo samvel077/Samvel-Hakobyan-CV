@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import { Modal } from "flowbite";
 import { CookieService } from "ngx-cookie-service";
@@ -9,7 +9,8 @@ import { environment } from "@environments/environment";
 @Component({
     selector: 'app-main-info-modal',
     templateUrl: './main-info-modal.component.html',
-    styleUrls: ['./main-info-modal.component.scss']
+    styleUrl: './main-info-modal.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainInfoModalComponent implements OnInit {
     private modalRef: Modal
