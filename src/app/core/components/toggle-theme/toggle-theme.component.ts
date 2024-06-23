@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { ThemeService } from "@core/services/theme.service";
+import { ThemeService } from '@core/services/theme.service';
 
 @Component({
   selector: 'app-toggle-theme',
@@ -9,10 +9,9 @@ import { ThemeService } from "@core/services/theme.service";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToggleThemeComponent {
-    constructor(public themeService: ThemeService) {
-    }
+  constructor(public themeService: ThemeService) {}
 
-    onToggleThemeMode() {
-      this.themeService.toggleThemeMode();
-    }
+  onToggleThemeMode() {
+    this.themeService.toggleThemeMode();
+  }
 }

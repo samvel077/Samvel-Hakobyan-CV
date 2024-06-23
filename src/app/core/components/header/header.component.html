@@ -1,30 +1,47 @@
 <header class="header flex w-full items-center gap-2 sm:gap-6 pb-3 sm:pb-6">
-    <div class="header-profile-picture flex justify-end flex-[1_1_40%] sm:flex-[1_1_31%] max-h-[260px] p-2.5 sm:p-5 before:w-picture-before-100% sm:before:w-picture-before-100%-sm before:rounded-r-full relative">
-        <img class="rounded-full w-full max-w-[240px] relative" ngSrc="assets/images/profile-picture.jpg"
-             alt="Rounded avatar"
-             height="800" width="800">
-    </div>
-    <div class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%] text-typography-2">
-        <h1 class="header-profile-info_title text-header font-bold ">{{ content.name }}</h1>
+  <div
+    class="header-profile-picture flex justify-end flex-[1_1_40%] sm:flex-[1_1_31%] max-h-[260px] p-2.5 sm:p-5 before:w-picture-before-100% sm:before:w-picture-before-100%-sm before:rounded-r-full relative">
+    <img
+      class="rounded-full w-full max-w-[240px] relative"
+      ngSrc="assets/images/profile-picture.jpg"
+      alt="Rounded avatar"
+      height="800"
+      width="800" />
+  </div>
+  <div
+    class="header-profile-info flex flex-col gap-3 sm:gap-6 flex-[1_1_60%] sm:flex-[1_1_69%] text-typography-2">
+    <h1 class="header-profile-info_title text-header font-bold">
+      {{ content.name }}
+    </h1>
 
-        <p class="header-profile-info_subtitle text-subheader italic">
-            <mark class="px-3 sm:px-6 py-1 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-                {{ content.position }}
-            </mark>
-        </p>
+    <p class="header-profile-info_subtitle text-subheader italic">
+      <mark
+        class="px-3 sm:px-6 py-1 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
+        {{ content.position }}
+      </mark>
+    </p>
 
-        <p class="header-profile-info_text text-info line-clamp-4 md:line-clamp-none leading-3 sm:leading-4 md:leading-5">
-            {{ content.about }}
-        </p>
-        <p id="view-all-tooltip-trigger" class="header-profile-info_text w-fit mt-[-8px] text-xs underline md:hidden cursor-pointer"
-           (click)="openViewAllTooltip('view-all-tooltip-target', 'view-all-tooltip-trigger')"
-        >
-            View all
-        </p>
-        <div id="view-all-tooltip-target" role="tooltip"
-             class="header-profile-info_tooltip absolute z-10 md:hidden invisible inline-block px-3 py-2 text-xs text-typography-3 transition-opacity duration-300 bg-typography-1 rounded-lg shadow-sm opacity-0 tooltip">
-            {{ content.about }}
-            <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
+    <p
+      class="header-profile-info_text text-info line-clamp-4 md:line-clamp-none leading-3 sm:leading-4 md:leading-5">
+      {{ content.about }}
+    </p>
+    <p
+      id="view-all-tooltip-trigger"
+      class="header-profile-info_text w-fit mt-[-8px] text-xs underline md:hidden cursor-pointer"
+      (click)="
+        openViewAllTooltip(
+          'view-all-tooltip-target',
+          'view-all-tooltip-trigger'
+        )
+      ">
+      View all
+    </p>
+    <div
+      id="view-all-tooltip-target"
+      role="tooltip"
+      class="header-profile-info_tooltip absolute z-10 md:hidden invisible inline-block px-3 py-2 text-xs text-typography-3 transition-opacity duration-300 bg-typography-1 rounded-lg shadow-sm opacity-0 tooltip">
+      {{ content.about }}
+      <div class="tooltip-arrow" data-popper-arrow></div>
     </div>
+  </div>
 </header>

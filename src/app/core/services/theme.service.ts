@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { ETheme } from "@app/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { ETheme } from '@app/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
   private _currentTheme: ETheme;
 
-  private _themeChanged$: BehaviorSubject<ETheme> = new BehaviorSubject<ETheme>(this.currentTheme);
+  private _themeChanged$: BehaviorSubject<ETheme> = new BehaviorSubject<ETheme>(
+    this.currentTheme
+  );
   themeChanged$: Observable<ETheme> = this._themeChanged$.asObservable();
 
   get currentTheme(): ETheme {
@@ -28,9 +30,12 @@ export class ThemeService {
 
   initTheme(): void {
     const savedThemeMode = localStorage.getItem('theme-mode');
-    const deviceThemeMode = window.matchMedia("(prefers-color-scheme: dark)");
+    const deviceThemeMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-    if (savedThemeMode === ETheme.Dark || (!savedThemeMode && deviceThemeMode.matches)) {
+    if (
+      savedThemeMode === ETheme.Dark ||
+      (!savedThemeMode && deviceThemeMode.matches)
+    ) {
       this.currentTheme = ETheme.Dark;
     } else {
       this.currentTheme = ETheme.Light;

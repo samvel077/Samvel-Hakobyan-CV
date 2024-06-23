@@ -1,31 +1,45 @@
-<ng-container [ngTemplateOutlet]="item.dropdown ? dropdown : name"
-              [ngTemplateOutletContext]="{ $implicit: item }">
+<ng-container
+  [ngTemplateOutlet]="item.dropdown ? dropdown : name"
+  [ngTemplateOutletContext]="{ $implicit: item }">
 </ng-container>
 
 <ng-template #dropdown let-item>
-    <button [id]="item.dropdown.id + '-trigger'"
-            (click)="openDropdown(item.dropdown.id + '-target', item.dropdown.id + '-trigger', item.dropdown.options, item)"
-            class="flex items-center text-typography-2 w-full hover:bg-transparent border-0 p-0 bg-transparent"
-    >
-        <span>{{ item.name }}</span>
-        <svg-icon iconName="menu-arrow"
-                  [classes]="'w-[6px] h-[7px] sm:w-2.5 sm:h-2.5 ml-1.5 sm:ml-2.5 transition ' + (item.dropdownElement?.isVisible() ? 'rotate-180' : '')" />
-    </button>
-    <div [id]="item.dropdown.id + '-target'"
-         [ngClass]="item.dropdown.classes"
-         class="absolute whitespace-nowrap z-10 hidden w-auto text-sm text-typography-2 bg-typography-4 rounded-lg shadow-md">
-        <div class="p-2 sm:p-4 text-typography-2 text-main-info">
-            <ul class="space-y-1.5 sm:space-y-3 leading-none sm:leading-tight">
-                <li *ngFor="let dropdownItem of item.dropdown.items">
-                    <ng-container [ngTemplateOutlet]="dropdownItem.dropdown ? dropdown : name"
-                                  [ngTemplateOutletContext]="{ $implicit: dropdownItem }">
-                    </ng-container>
-                </li>
-            </ul>
-        </div>
+  <button
+    [id]="item.dropdown.id + '-trigger'"
+    (click)="
+      openDropdown(
+        item.dropdown.id + '-target',
+        item.dropdown.id + '-trigger',
+        item.dropdown.options,
+        item
+      )
+    "
+    class="flex items-center text-typography-2 w-full hover:bg-transparent border-0 p-0 bg-transparent">
+    <span>{{ item.name }}</span>
+    <svg-icon
+      iconName="menu-arrow"
+      [classes]="
+        'w-[6px] h-[7px] sm:w-2.5 sm:h-2.5 ml-1.5 sm:ml-2.5 transition ' +
+        (item.dropdownElement?.isVisible() ? 'rotate-180' : '')
+      " />
+  </button>
+  <div
+    [id]="item.dropdown.id + '-target'"
+    [ngClass]="item.dropdown.classes"
+    class="absolute whitespace-nowrap z-10 hidden w-auto text-sm text-typography-2 bg-typography-4 rounded-lg shadow-md">
+    <div class="p-2 sm:p-4 text-typography-2 text-main-info">
+      <ul class="space-y-1.5 sm:space-y-3 leading-none sm:leading-tight">
+        <li *ngFor="let dropdownItem of item.dropdown.items">
+          <ng-container
+            [ngTemplateOutlet]="dropdownItem.dropdown ? dropdown : name"
+            [ngTemplateOutletContext]="{ $implicit: dropdownItem }">
+          </ng-container>
+        </li>
+      </ul>
     </div>
+  </div>
 </ng-template>
 
 <ng-template #name let-item>
-    {{ item.name }}
+  {{ item.name }}
 </ng-template>
