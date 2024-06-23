@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule, isDevMode, APP_INITIALIZER, inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterOutlet } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
@@ -7,6 +7,15 @@ import { AppComponent } from "@app/app.component";
 import { AppRoutingModule } from "@app/app-routing.module";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from "@environments/environment";
+import { ThemeService } from "@core/services/theme.service";
+
+const appInitFactory = () => {
+  const themeService = inject(ThemeService);
+
+  return () => {
+    themeService.initTheme();
+  }
+}
 
 @NgModule({
     declarations: [
@@ -31,6 +40,11 @@ import { environment } from "@environments/environment";
         //     provide: APP_BASE_HREF,
         //     useValue: environment.BASE_HREF
         // },
+      {
+        provide: APP_INITIALIZER,
+        useFactory: appInitFactory,
+        multi: true,
+      }
     ],
     bootstrap: [AppComponent]
 })

@@ -1,9 +1,2 @@
-$light-colors: (
-  blue-950: #122630,
-  black: #1b1414,
-  white: #ffffff
-);
-
-$dark-colors: (
-  // for dark mode implementation
-)
+@import "theme/_dark";
+@import "theme/_light";

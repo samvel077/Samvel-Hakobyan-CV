@@ -11,7 +11,7 @@ export class AppComponent implements AfterViewInit {
 
     // The initFlowbite works only with single page applications
     ngAfterViewInit() {
-        // The etTimeout need for iPhone initialization issue
+        // The setTimeout need for iPhone initialization issue
         setTimeout(() => {
             initFlowbite();
         }, 100)

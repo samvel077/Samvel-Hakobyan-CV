@@ -10,14 +10,14 @@ module.exports = {
                 'serif': ['avenir-next', 'sans-serif'],
             },
             colors: {
-                blue: {
-                    950: "var(--blue-950)"
-                },
-                white: "var(--white)",
-                black: "var(--black)",
+                'typography-1': "var(--typography-1)",
+                'typography-2': "var(--typography-2)",
+                'typography-3': "var(--typography-3)",
+                'typography-4': "var(--typography-4)",
             },
             backgroundImage: {
-                'page': "url(assets/images/background.jpg)"
+                'page': "url(assets/images/background.jpg)",
+                'page-dark': "url(assets/images/background-dark.jpg)"
             },
             minHeight: {
                 'container': "1268px",

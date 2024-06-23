@@ -3,12 +3,12 @@
         <div class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] gap-3.5 sm:gap-8">
             <div class="main-info_education">
                 <div class="main-info_education_title text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5 w-fit">
-                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
                         {{ content.education.title }}
                     </p>
                 </div>
                 <div class="main-info_education_list pl-2 sm:pl-3">
-                    <ul class="space-y-2 text-blue-950 list-none list-inside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-2 text-typography-2 list-none list-inside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let education of content.education.items">
                             <p class="font-semibold">{{ education.date }}</p>
                             <p class="mt-0.5">{{ education.info }}</p>
@@ -18,12 +18,12 @@
             </div>
             <div class="main-info_qualifications">
                 <div class="main-info_qualifications_title text-main-info-title w-fit uppercase font-semibold mb-2 sm:mb-3.5">
-                    <p class="px-5 sm:px-7 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <p class="px-5 sm:px-7 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
                         {{ content.qualifications.title }}
                     </p>
                 </div>
                 <div class="main-info_qualifications_list ml-4 sm:ml-6">
-                    <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let qualification of content.qualifications.items">
                             {{ qualification.info }}
                         </li>
@@ -32,12 +32,12 @@
             </div>
             <div class="main-info_languages">
                 <div class="main-info_languages_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
-                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
                         {{ content.languages.title }}
                     </p>
                 </div>
                 <div class="main-info_languages_list ml-4 sm:ml-6">
-                    <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let language of content.languages.items">
                             {{ language.info }}
                         </li>
@@ -46,12 +46,12 @@
             </div>
             <div class="main-info_skills">
                 <div class="main-info_skills_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
-                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <p class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
                         {{ content.skills.title }}
                     </p>
                 </div>
                 <div class="main-info_skills_list ml-4 sm:ml-6">
-                    <ul class="space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                    <ul class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
                         <li *ngFor="let skill of content.skills.items">
                             <menu-dropdown [item]="skill"></menu-dropdown>
                         </li>
@@ -62,13 +62,13 @@
         <div class="main-info_second flex flex-col flex-[1_1_58%] md:flex-[1_1_65%]">
             <div class="main-info_experience">
                 <div class="main-info_experience_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
-                    <p class="px-8 sm:px-12 py-1 sm:py-2 text-white bg-blue-950 rounded-r-full rounded-l-full dark:bg-blue-950">
+                    <p class="px-8 sm:px-12 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
                         Professional Experiance
                     </p>
                 </div>
                 <div class="main-info_experience_wrapper flex flex-col gap-5 sm:gap-10">
                     <div class="main-info_experience_item pl-2 sm:pl-3">
-                        <ul class="space-y-1.5 sm:space-y-2 text-blue-950 list-none list-inside leading-none sm:leading-tight text-main-info">
+                        <ul class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">
                             <li>
                                 <div class="flex justify-between text-subheader font-semibold">
                                     <span>Arnology LLC</span>
@@ -82,7 +82,7 @@
                             </li>
                             <li>
                                 <p class="font-semibold">Projects:</p>
-                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
                                     <li>EventSource ( <a class="underline hover:text-gray-500" href="https://www.eventsource.ca/" target="_blank">https://www.eventsource.ca/</a> )</li>
                                     <li>HYCM ( <a class="underline hover:text-gray-500" href="https://www.hycm.com/en" target="_blank">https://www.hycm.com/en</a> )</li>
                                     <li>Q9 ( <a class="underline hover:text-gray-500" href="https://www.q9capital.com/en" target="_blank">https://www.q9capital.com/en</a> ) etc.</li>
@@ -96,7 +96,7 @@
                         </ul>
                     </div>
                     <div class="main-info_experience_item pl-2 sm:pl-3">
-                        <ul class="space-y-1.5 sm:space-y-2 text-blue-950 list-none list-inside leading-none sm:leading-tight text-main-info">
+                        <ul class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">
                             <li>
                                 <div class="flex justify-between text-subheader font-semibold">
                                     <span>Technamin</span>
@@ -111,7 +111,7 @@
                             </li>
                             <li>
                                 <p class="font-semibold">Responsibilities:</p>
-                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
                                     <li>Develop efficient and reusable components and front-end solutions</li>
                                     <li>Ensuring high performance of applications and providing support</li>
                                     <li>Develop and maintain sufficient test coverage for all features</li>
@@ -122,7 +122,7 @@
                             </li>
                             <li>
                                 <p class="font-semibold">Achievement:</p>
-                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-blue-950 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                                <ul class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
                                     <li>
                                         Gave a presentation about Zone.js and Angular Signals.
                                         <span class="underline cursor-pointer mt-1 hover:text-gray-500"
@@ -147,34 +147,34 @@
 <ng-template #loading>
     <div role="status" class="space-y-2.5 animate-pulse">
         <div class="flex items-center w-full">
-            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full w-32"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
         </div>
         <div class="flex items-center w-full">
-            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
         </div>
         <div class="flex items-center w-full">
-            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full w-80"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
         </div>
         <div class="flex items-center w-full">
-            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+            <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
         </div>
         <div class="flex items-center w-full">
-            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-32"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full w-32"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full w-full"></div>
         </div>
         <div class="flex items-center w-full">
-            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
-            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+            <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full w-80"></div>
+            <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
         </div>
         <span class="sr-only">Loading...</span>
     </div>

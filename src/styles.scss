@@ -1,12 +1,10 @@
-/* You can add global styles to this file, and also import other style pdf */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @import 'fonts';
 @import 'variables';
 @import "mixins";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   html {
@@ -17,10 +15,10 @@
 
   body {
     // init the theme color variables
-    @include theme-colors($light-theme: true);
+    @include theme-colors($light-colors);
 
     &.dark {
-      @include theme-colors($light-theme: false);
+      @include theme-colors($dark-colors);
     }
 
     @apply min-h-full;

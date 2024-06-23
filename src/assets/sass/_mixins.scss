@@ -1,12 +1,6 @@
-@mixin theme-colors($light-theme: true) {
-  @if $light-theme {
-    @each $name, $color in $light-colors {
-      --#{$name}: #{$color};
-    }
-  } @else {
-    @each $name, $color in $dark-colors {
-      --#{$name}: #{$color};
-    }
+@mixin theme-colors($colors) {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
   }
 }
 
