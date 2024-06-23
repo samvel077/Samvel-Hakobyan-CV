@@ -10,7 +10,8 @@
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "prepare": "husky"
   },
   "dependencies": {
     "@angular/animations": "^17.3.11",
@@ -45,12 +46,9 @@
     "prettier": "^3.3.2",
     "typescript": "~5.4.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.{ts,html}": "prettier --write"
+    "*.{ts, html}": [
+      "prettier --write"
+    ]
   }
 }
