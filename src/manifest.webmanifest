@@ -59,16 +59,16 @@
   ],
    "screenshots": [
       {
-        "src": "assets/images/CV-preview-desktop.png",
+        "src": "assets/images/CV-preview-desktop.webp",
         "sizes": "1024x1536",
-        "type": "image/png",
+        "type": "image/webp",
         "form_factor": "wide",
         "label": "Interactive and Responsive CV"
       },
       {
-        "src": "assets/images/CV-preview-mobile.png",
+        "src": "assets/images/CV-preview-mobile.webp",
         "sizes": "540x810",
-        "type": "image/png",
+        "type": "image/webp",
         "form_factor": "narrow",
         "label": "Interactive and Responsive CV"
       }

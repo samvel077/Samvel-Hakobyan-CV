@@ -13,8 +13,8 @@ module.exports = {
         'typography-4': 'var(--typography-4)',
       },
       backgroundImage: {
-        page: 'url(assets/images/background.jpg)',
-        'page-dark': 'url(assets/images/background-dark.jpg)',
+        page: 'url(assets/images/background.webp)',
+        'page-dark': 'url(assets/images/background-dark.webp)',
       },
       minHeight: {
         container: '1268px',
