@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { createTooltip } from '@app/core';
+import { createTooltip } from '@app/utils';
 
 @Component({
   selector: 'app-header',

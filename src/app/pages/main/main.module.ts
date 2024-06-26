@@ -10,7 +10,7 @@ import {
 } from '@app/pages';
 import { CoreModule } from '@core/core.module';
 import { MainRoutingModule } from '@pages/main/main-routing.module';
-import { MainService } from '@pages/main/services/main.service';
+import { MainService } from '@pages/main/services';
 
 @NgModule({
   declarations: [MainComponent, MainInfoComponent, MainInfoModalComponent],

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Modal } from 'flowbite';
 import { CookieService } from 'ngx-cookie-service';
 
-import { createModal } from '@app/core';
+import { createModal } from '@app/utils';
 import { environment } from '@environments/environment';
 
 @Component({

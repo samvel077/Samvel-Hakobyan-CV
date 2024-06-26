@@ -8,7 +8,8 @@ import {
 
 import { DropdownOptions } from 'flowbite';
 
-import { createDropdown, IMenuDropdownItem } from '@app/core';
+import { IMenuDropdownItem } from '@app/core';
+import { createDropdown } from '@app/utils';
 
 @Component({
   selector: 'menu-dropdown',

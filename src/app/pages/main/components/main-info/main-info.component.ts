@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { fileDownload } from '@app/core';
-import { MainService } from '@pages/main/services/main.service';
-import { IMainInfo } from '@core/interfaces/main-info.interface';
+import { fileDownload } from '@app/utils';
+import { MainService } from '@pages/main/services';
+import { IMainInfo } from '@core/interfaces';
 
 @Component({
   selector: 'app-main-info',
