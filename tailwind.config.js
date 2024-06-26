@@ -1,9 +1,5 @@
 let { environment } = require('./src/environments/environment');
 
-if (process.env.IS_PROD) {
-  environment = require("./src/environments/environment.prod").environment;
-}
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{html,ts,json}', './node_modules/flowbite/**/*.js'],
@@ -19,8 +15,8 @@ module.exports = {
         'typography-4': 'var(--typography-4)',
       },
       backgroundImage: {
-        page: `url(${environment.BASE_URL}assets/images/background.webp)`,
-        'page-dark': `url(${environment.BASE_URL}assets/images/background-dark.webp)`,
+        page: `url(${process.env.BASE_URL || environment.BASE_URL}assets/images/background.webp)`,
+        'page-dark': `url(${process.env.BASE_URL || environment.BASE_URL}assets/images/background-dark.webp)`,
       },
       minHeight: {
         container: '1268px',
