@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "ng build",
+    "prebuild:prod": "node src/assets/scripts/add-prod-env-variables.js",
     "build:prod": "ng build --configuration production",
     "postbuild:prod": "node src/assets/scripts/create-404-html.js",
     "format": "prettier --write .",

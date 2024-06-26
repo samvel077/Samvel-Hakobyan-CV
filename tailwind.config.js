@@ -1,4 +1,8 @@
-const { environment } = require("./src/environments/environment");
+let { environment } = require('./src/environments/environment');
+
+if (process.env.IS_PROD) {
+  environment = require("./src/environments/environment.prod").environment;
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
