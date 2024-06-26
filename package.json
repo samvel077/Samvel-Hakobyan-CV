@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "ng build",
-    "prebuild:prod": "node src/assets/scripts/add-env-variables.js",
     "build:prod": "ng build --configuration production",
     "postbuild:prod": "node src/assets/scripts/create-404-html.js",
     "format": "prettier --write .",
@@ -36,7 +35,6 @@
     "@angular/cli": "~17.3.8",
     "@angular/compiler-cli": "^17.3.11",
     "@types/jasmine": "~4.3.0",
-    "dotenv": "^16.4.5",
     "husky": "^9.0.11",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
