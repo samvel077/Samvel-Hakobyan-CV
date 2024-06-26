@@ -12,6 +12,8 @@ import { IMainInfo } from '@core/interfaces/main-info.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainInfoComponent {
+  public loadingTemplates: void[] = Array(5).fill(null);
+
   public content$: Observable<IMainInfo>;
 
   private presentationFileUrls: string[] = [
