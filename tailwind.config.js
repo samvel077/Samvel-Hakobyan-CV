@@ -12,10 +12,6 @@ module.exports = {
         'typography-3': 'var(--typography-3)',
         'typography-4': 'var(--typography-4)',
       },
-      backgroundImage: {
-        page: "url('assets/images/background.webp')",
-        'page-dark': "url('assets/images/background-dark.webp')",
-      },
       minHeight: {
         container: '1268px',
       },
@@ -36,8 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('flowbite/plugin')],
-  corePlugins: {
-    backgroundImage: false
-  }
+  plugins: [require('flowbite/plugin')]
 };
