@@ -62,7 +62,8 @@
             },
             "scripts": [],
             "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            "ngswConfigPath": "ngsw-config.json",
+            "rebaseRootRelativeCssUrls": true
           },
           "configurations": {
             "production": {
