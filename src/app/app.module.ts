@@ -7,7 +7,7 @@ import { AppComponent } from '@app/app.component';
 import { AppRoutingModule } from '@app/app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '@environments/environment';
-import { ThemeService } from '@core/services/theme.service';
+import { ThemeService } from '@core/services';
 
 const appInitFactory = () => {
   const themeService = inject(ThemeService);

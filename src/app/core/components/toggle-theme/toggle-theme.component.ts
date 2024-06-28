@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { ThemeService } from '@core/services/theme.service';
+import { ThemeService } from '@core/services';
 
 @Component({
   selector: 'app-toggle-theme',

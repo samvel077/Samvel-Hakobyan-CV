@@ -32,8 +32,5 @@ module.exports = {
       },
     },
   },
-  corePlugins: {
-    backgroundImage: false,
-  },
   plugins: [require('flowbite/plugin')]
 };
