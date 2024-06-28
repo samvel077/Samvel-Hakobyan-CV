@@ -1,7 +1,9 @@
 <div class="layout flex flex-col gap-4 md:gap-8">
   <!--        Use bg-100% class instead of bg-cover to adjust height from background image-->
   <div
-    class="page container relative max-w-4xl bg-no-repeat bg-cover shadow-xl">
+    class="container relative max-w-4xl bg-no-repeat bg-cover shadow-xl"
+    [style.backgroung-image]="var(--page-bg-image-url)"
+  >
     <!--        Use this image to adjust height from background image-->
     <!--        <img ngSrc="assets/images/background.webp" class="invisible" height="1280" width="905" alt="background">-->
 
