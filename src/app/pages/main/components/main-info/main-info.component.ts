@@ -12,7 +12,7 @@ import { IMainInfo } from '@core/interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainInfoComponent {
-  public loadingTemplates: void[] = Array(5).fill(null);
+  public loadingTemplates: void[] = Array(8).fill(null);
 
   public content$: Observable<IMainInfo>;
 
