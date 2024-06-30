@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { AsyncPipe, NgForOf, NgIf, NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 import { SharedModule } from '@shared/shared.module';
 import {
@@ -19,11 +22,10 @@ import { MainService } from '@pages/main/services';
     SharedModule,
     CoreModule,
     NgOptimizedImage,
-    HttpClientModule,
     NgIf,
     AsyncPipe,
     NgForOf,
   ],
-  providers: [MainService],
+  providers: [MainService, provideHttpClient(withInterceptorsFromDi())],
 })
 export class MainModule {}

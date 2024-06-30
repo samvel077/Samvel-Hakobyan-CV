@@ -28,6 +28,10 @@ program
     '-i, --include [include]',
     'Optional path to list of image files to include for preload link generation'
   )
+  .option(
+    '-ri, --rootImages [rootImages]',
+    'Optional path to list of images folder inside dist folder'
+  )
   // .option('-e, --exclude [exclude]', 'Optional comma separated list of image file names to exclude from preload link generation')
   .parse(process.argv);
 
@@ -54,22 +58,26 @@ if (!appBuildDirs || appBuildDirs.length === 0) {
 }
 
 for (const appBuildDir of appBuildDirs) {
-  const files = fs.readdirSync(appBuildDir);
+  const files = options['rootImages']
+    ? fs.readdirSync(`${appBuildDir}/${options['rootImages']}`)
+    : fs.readdirSync(appBuildDir);
+
   // const images = FileUtil.filterImages(
   //   files,
   //   options['include'] ? options['include'].split(',') : undefined,
   //   options['exclude'] ? options['exclude'].split(',') : undefined
   // );
 
-  const images = FileUtil.filterImagesFromFolders(files, [
-    'src/assets/images/preload',
-  ]);
+  const images = FileUtil.filterImagesFromFolders(
+    files,
+    options['include'].split(',')
+  );
 
   if (images && images.size > 0) {
     const preloadImageLinks = Array.from(images.keys())
       .map(
         image =>
-          `<link rel="preload" as="image" href="${image}" type="image/${images.get(image)}" crossorigin="anonymous">`
+          `<link rel="preload" as="image" href="${options['rootImages'] || ''}/${image}" type="image/${images.get(image)}" crossorigin="anonymous">`
       )
       .join('\n');
     const indexFilePath = `${appBuildDir}/${options['file']}`;

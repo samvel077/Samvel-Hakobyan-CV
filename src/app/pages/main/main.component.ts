@@ -14,6 +14,6 @@ export class MainComponent {
 
   ETheme = ETheme;
 
-  pageBgImageUrl = "url('assets/images/background.webp')";
-  pageBgImageUrlDark = "url('assets/images/background-dark.webp')";
+  pageBgImageUrl = "url('/assets/images/background.webp')";
+  pageBgImageUrlDark = "url('/assets/images/background-dark.webp')";
 }

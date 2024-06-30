@@ -1,8 +1,7 @@
 import * as fs from 'fs';
-import * as path from 'path';
 
 export class FileUtil {
-  private static regexImageType = /\.(jpeg|jpg|png|gif|webp|svg)$/i;
+  private static regexImageType = /\.(jpeg|jpg|png|gif|webp)$/i;
 
   public static filterImagesFromFolders(
     rootFiles: string[],
@@ -21,6 +20,8 @@ export class FileUtil {
         }
 
         const fileName = FileUtil.getFileName(file)?.toLowerCase();
+
+        console.log(file, fileName);
 
         fileName && include.push(fileName);
       }
@@ -130,9 +131,7 @@ export class FileUtil {
    * @returns Filename without fingerprint and file type
    */
   public static getFileName(file: string): string | undefined {
-    const match = file.match(/((\.[- a-z0-9]*)?(.[\w\d]*){1})$/);
-    return match && match.length > 0
-      ? file.substr(0, file.indexOf(match[0]))
-      : undefined;
+    const match = file.match(/^(.+?)(?:-[A-Za-z0-9]{8})?\.[A-Za-z0-9]+$/);
+    return match ? match[1] : undefined;
   }
 }
