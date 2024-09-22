@@ -60,14 +60,14 @@
    "screenshots": [
       {
         "src": "assets/images/CV-preview-desktop.webp",
-        "sizes": "1024x1536",
+        "sizes": "581x816",
         "type": "image/webp",
         "form_factor": "wide",
         "label": "Interactive and Responsive CV"
       },
       {
         "src": "assets/images/CV-preview-mobile.webp",
-        "sizes": "540x810",
+        "sizes": "268x508",
         "type": "image/webp",
         "form_factor": "narrow",
         "label": "Interactive and Responsive CV"
