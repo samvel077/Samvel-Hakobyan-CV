@@ -1,9 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { SvgIconComponent } from '@shared/components';
+
 @Component({
   selector: 'app-footer',
+  standalone: true,
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SvgIconComponent],
 })
 export class FooterComponent {}

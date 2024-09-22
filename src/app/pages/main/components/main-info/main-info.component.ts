@@ -1,35 +1,50 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  input,
+} from '@angular/core';
+import { AsyncPipe, SlicePipe } from '@angular/common';
 import { Observable } from 'rxjs';
 
-import { fileDownload } from '@app/utils';
-import { MainService } from '@pages/main/services';
-import { IMainInfo } from '@core/interfaces';
+import { MenuDropdownComponent } from '@shared/components';
+import { fileDownload } from '@utils/file-download';
+
+import { MainService } from '../../services';
+import { IMainInfo } from '../../models';
+import { MainInfoSkeletonComponent } from '../main-info-skeleton/main-info-skeleton.component';
 
 @Component({
   selector: 'app-main-info',
+  standalone: true,
   templateUrl: './main-info.component.html',
-  styleUrl: './main-info.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    MenuDropdownComponent,
+    AsyncPipe,
+    SlicePipe,
+    MainInfoSkeletonComponent,
+  ],
+  providers: [MainService],
 })
 export class MainInfoComponent {
-  public loadingTemplates: void[] = Array(8).fill(null);
+  page = input(1, {
+    transform: (value: string | number) => Number(value),
+  });
 
-  public content$: Observable<IMainInfo>;
+  content$: Observable<IMainInfo>;
 
-  private presentationFileUrls: string[] = [
-    'assets/pdf/Presentation.pdf',
-    'assets/pdf/Presentation-slides.pdf',
-  ];
+  private mainService = inject(MainService);
 
-  constructor(private mainService: MainService) {
+  constructor() {
     this.initContent();
+  }
+
+  downloadFiles(fileUrls: string[]): void {
+    fileDownload(fileUrls);
   }
 
   private initContent(): void {
     this.content$ = this.mainService.getMainContent();
-  }
-
-  public downloadPresentationFiles(): void {
-    fileDownload(this.presentationFileUrls);
   }
 }

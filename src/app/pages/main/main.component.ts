@@ -1,19 +1,27 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { ThemeService } from '@core/services';
-import { ETheme } from '@app/core';
+import {
+  FooterComponent,
+  HeaderComponent,
+  ToggleThemeComponent,
+} from '@core/components';
+import { SvgIconComponent, PageWrapperComponent } from '@shared/components';
+
+import { MainInfoComponent, MainInfoModalComponent } from './components';
 
 @Component({
   selector: 'app-main',
+  standalone: true,
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    ToggleThemeComponent,
+    HeaderComponent,
+    MainInfoComponent,
+    FooterComponent,
+    SvgIconComponent,
+    MainInfoModalComponent,
+    PageWrapperComponent,
+  ],
 })
-export class MainComponent {
-  themeService = inject(ThemeService);
-
-  ETheme = ETheme;
-
-  pageBgImageUrl = "url('/assets/images/background.webp')";
-  pageBgImageUrlDark = "url('/assets/images/background-dark.webp')";
-}
+export class MainComponent {}

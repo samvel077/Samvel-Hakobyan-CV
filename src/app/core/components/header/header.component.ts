@@ -1,39 +1,38 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 
-import { createTooltip } from '@app/utils';
+import { createTooltip } from '@utils/flowbite-components';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgOptimizedImage],
 })
 export class HeaderComponent {
-  public content: any;
+  content: { name: string; position: string; about: string };
+
+  private experience = new Date().getFullYear() - 2019;
 
   constructor() {
     this.initContent();
   }
 
-  private initContent(): void {
-    this.content = {
-      name: 'Samvel Hakobyan',
-      position: 'Front-end Angular Developer',
-      about: `Front-end Developer with over 4 years experience.
-                    I specialize in JavaScript and have professional experience working with Angular.
-                    During this time, I have faced various challenges and managed to offer the most
-                    optimal and the best solutions.
-                    Create complex web applications with user friendly interfaces.
-                    Develop efficient and reusable components and front-end solutions with ensuring a clear
-                    dependency chain, in terms of both application logic as well as file relationships.`,
-    };
-  }
-
-  public openViewAllTooltip(targetId: string, triggerId: string): void {
+  openViewAllTooltip(targetId: string, triggerId: string): void {
     const tooltip = createTooltip(targetId, triggerId, {
       triggerType: 'click',
     });
 
     tooltip.show();
+  }
+
+  private initContent(): void {
+    this.content = {
+      name: 'Samvel Hakobyan',
+      position: 'Frontend Angular Developer',
+      about: `Experienced Frontend Developer with ${this.experience}+ years of expertise specializing in JavaScript and proficient in Angular. Skilled in overcoming diverse challenges, I consistently deliver optimal solutions. Proficient in crafting complex web applications with intuitive user interfaces. Expertise in developing efficient and reusable components, maintaining clear dependency chains in terms of both application logic and file relationships.`,
+    };
   }
 }

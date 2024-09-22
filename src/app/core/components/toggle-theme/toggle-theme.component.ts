@@ -1,15 +1,17 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
 import { ThemeService } from '@core/services';
+import { SvgIconComponent } from '@shared/components';
 
 @Component({
   selector: 'app-toggle-theme',
+  standalone: true,
   templateUrl: './toggle-theme.component.html',
-  styleUrl: './toggle-theme.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SvgIconComponent],
 })
 export class ToggleThemeComponent {
-  constructor(public themeService: ThemeService) {}
+  private themeService = inject(ThemeService);
 
   onToggleThemeMode() {
     this.themeService.toggleThemeMode();

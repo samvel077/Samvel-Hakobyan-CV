@@ -1,10 +1,11 @@
-import { IMenuDropdownItem } from '@app/core';
+import { IMenuDropdownItem } from '@core/interfaces';
 
 export interface IMainInfo {
   education: IMainInfoItem<IEducation>;
   qualifications: IMainInfoItem<IQualification>;
   languages: IMainInfoItem<ILanguage>;
   skills: IMainInfoItem<ISkill>;
+  experience: IMainInfoItem<IExperience>;
 }
 
 export interface IMainInfoItem<T> {
@@ -23,6 +24,15 @@ export interface IQualification {
 
 export interface ILanguage {
   info: string;
+}
+
+export interface IExperience {
+  date: string;
+  companyName: string;
+  position: string;
+  info: string;
+  responsibilities: string[];
+  files?: string[];
 }
 
 export interface ISkill extends IMenuDropdownItem {}

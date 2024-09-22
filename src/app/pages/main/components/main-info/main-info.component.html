@@ -1,241 +1,147 @@
-<main *ngIf="content$ | async as content; else loading">
-  <div class="main-info flex justify-between gap-2 sm:gap-6">
-    <div
-      class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] gap-3.5 sm:gap-8">
-      <div class="main-info_education">
+@if (content$ | async; as content) {
+  <main>
+    <div class="main-info flex justify-between gap-2 sm:gap-6">
+      @if (page() === 1) {
         <div
-          class="main-info_education_title text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5 w-fit">
-          <p
-            class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-            {{ content.education.title }}
-          </p>
-        </div>
-        <div class="main-info_education_list pl-2 sm:pl-3">
-          <ul
-            class="space-y-2 text-typography-2 list-none list-inside text-main-info leading-none sm:leading-tight">
-            <li *ngFor="let education of content.education.items">
-              <p class="font-semibold">{{ education.date }}</p>
-              <p class="mt-0.5">{{ education.info }}</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="main-info_qualifications">
-        <div
-          class="main-info_qualifications_title text-main-info-title w-fit uppercase font-semibold mb-2 sm:mb-3.5">
-          <p
-            class="px-5 sm:px-7 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-            {{ content.qualifications.title }}
-          </p>
-        </div>
-        <div class="main-info_qualifications_list ml-4 sm:ml-6">
-          <ul
-            class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-            <li *ngFor="let qualification of content.qualifications.items">
-              {{ qualification.info }}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="main-info_languages">
-        <div
-          class="main-info_languages_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
-          <p
-            class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-            {{ content.languages.title }}
-          </p>
-        </div>
-        <div class="main-info_languages_list ml-4 sm:ml-6">
-          <ul
-            class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-            <li *ngFor="let language of content.languages.items">
-              {{ language.info }}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="main-info_skills">
-        <div
-          class="main-info_skills_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
-          <p
-            class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-            {{ content.skills.title }}
-          </p>
-        </div>
-        <div class="main-info_skills_list ml-4 sm:ml-6">
-          <ul
-            class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-            <li *ngFor="let skill of content.skills.items">
-              <menu-dropdown [item]="skill" />
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div
-      class="main-info_second flex flex-col flex-[1_1_58%] md:flex-[1_1_65%]">
-      <div class="main-info_experience">
-        <div
-          class="main-info_experience_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
-          <p
-            class="px-8 sm:px-12 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-            Professional Experiance
-          </p>
-        </div>
-        <div class="main-info_experience_wrapper flex flex-col gap-5 sm:gap-10">
-          <div class="main-info_experience_item pl-2 sm:pl-3">
-            <ul
-              class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">
-              <li>
-                <div class="flex justify-between text-subheader font-semibold">
-                  <span>Arnology LLC</span>
-                  <span>2020 - 2023</span>
-                </div>
-                <p class="mt-1 sm:mt-1.5 text-main-info font-semibold">
-                  Angular Front-end Developer
-                </p>
-              </li>
-              <li>
-                Arnology LLC was an outsourcing company, where I worked as a
-                freelancer. During my work, I participated in customer calls,
-                conducted interviews and worked on various projects.
-              </li>
-              <li>
-                <p class="font-semibold">Projects:</p>
-                <ul
-                  class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
+          class="main-info_first flex flex-col flex-[1_1_42%] md:flex-[1_1_35%] gap-3.5 sm:gap-8">
+          <div class="main-info_education">
+            <div
+              class="main-info_education_title text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5 w-fit">
+              <p
+                class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
+                {{ content.education.title }}
+              </p>
+            </div>
+            <div class="main-info_education_list pl-2 sm:pl-3">
+              <ul
+                class="space-y-2 text-typography-2 list-none list-inside text-main-info leading-none sm:leading-tight">
+                @for (education of content.education.items; track education) {
                   <li>
-                    EventSource (
-                    <a
-                      class="underline hover:text-gray-500"
-                      href="https://www.eventsource.ca/"
-                      target="_blank"
-                      >https://www.eventsource.ca/</a
-                    >
-                    )
+                    <p class="font-semibold">{{ education.date }}</p>
+                    <p class="mt-0.5">{{ education.info }}</p>
                   </li>
-                  <li>
-                    HYCM (
-                    <a
-                      class="underline hover:text-gray-500"
-                      href="https://www.hycm.com/en"
-                      target="_blank"
-                      >https://www.hycm.com/en</a
-                    >
-                    )
-                  </li>
-                  <li>
-                    Q9 (
-                    <a
-                      class="underline hover:text-gray-500"
-                      href="https://www.q9capital.com/en"
-                      target="_blank"
-                      >https://www.q9capital.com/en</a
-                    >
-                    ) etc.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <span class="font-semibold">Technologies:</span>
-                <p class="pl-2 sm:pl-5 mt-1">
-                  Angular, Boostrap, Angular Material, NG Boostrap, SwiperJs,
-                  RxJs, Moment.js, Email Templates, Google Tags etc.
-                </p>
-              </li>
-            </ul>
+                }
+              </ul>
+            </div>
           </div>
-          <div class="main-info_experience_item pl-2 sm:pl-3">
-            <ul
-              class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">
-              <li>
-                <div class="flex justify-between text-subheader font-semibold">
-                  <span>Technamin</span>
-                  <span>2023 - Present</span>
-                </div>
-                <p class="mt-1 sm:mt-1.5 text-main-info font-semibold">
-                  Middle Front-end Angular Developer
-                </p>
-              </li>
-              <li>
-                Technamin is an iGaming software provider. The Front-end team
-                consisted of two groups. I am developing the admin platform
-                where you can control and set up all Gaming websites and see
-                their activity.
-              </li>
-              <li>
-                <p class="font-semibold">Responsibilities:</p>
-                <ul
-                  class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
+          <div class="main-info_qualifications">
+            <div
+              class="main-info_qualifications_title text-main-info-title w-fit uppercase font-semibold mb-2 sm:mb-3.5">
+              <p
+                class="px-5 sm:px-7 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
+                {{ content.qualifications.title }}
+              </p>
+            </div>
+            <div class="main-info_qualifications_list ml-4 sm:ml-6">
+              <ul
+                class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                @for (qualification of content.qualifications.items; track qualification) {
                   <li>
-                    Develop efficient and reusable components and front-end
-                    solutions
+                    {{ qualification.info }}
                   </li>
+                }
+              </ul>
+            </div>
+          </div>
+          <div class="main-info_languages">
+            <div
+              class="main-info_languages_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
+              <p
+                class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
+                {{ content.languages.title }}
+              </p>
+            </div>
+            <div class="main-info_languages_list ml-4 sm:ml-6">
+              <ul
+                class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                @for (language of content.languages.items; track language) {
                   <li>
-                    Ensuring high performance of applications and providing
-                    support
+                    {{ language.info }}
                   </li>
+                }
+              </ul>
+            </div>
+          </div>
+          <div class="main-info_skills">
+            <div
+              class="main-info_skills_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
+              <p
+                class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
+                {{ content.skills.title }}
+              </p>
+            </div>
+            <div class="main-info_skills_list ml-4 sm:ml-6">
+              <ul
+                class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                @for (skill of content.skills.items; track skill) {
                   <li>
-                    Develop and maintain sufficient test coverage for all
-                    features
+                    <menu-dropdown [item]="skill" />
                   </li>
-                  <li>
-                    Participate in re-architecting our client-side solutions
-                  </li>
-                  <li>Contributing ideas to our product development roadmap</li>
-                  <li>
-                    Collaborate with internal teams to produce software design
-                    and architecture.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p class="font-semibold">Achievement:</p>
-                <ul
-                  class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                  <li>
-                    Gave a presentation about Zone.js and Angular Signals.
-                    <span
-                      class="underline cursor-pointer mt-1 hover:text-gray-500"
-                      (click)="downloadPresentationFiles()">
-                      ( download PDF files )
-                    </span>
-                  </li>
-                  <li>Presentation about Angular Schematics.</li>
-                </ul>
-              </li>
-            </ul>
+                }
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</main>
+      }
 
-<ng-template #loading>
-  <div role="status" class="space-y-2.5 animate-pulse">
-    @for (template of loadingTemplates; track $index) {
-      <div class="flex items-center w-full">
-        <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full w-32"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
+      <div
+        class="main-info_second flex flex-col flex-[1_1_58%] md:flex-[1_1_65%]">
+        <div class="main-info_experience">
+          @if (page() === 1) {
+            <div
+              class="main-info_experience_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
+              <p
+                class="px-8 sm:px-12 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
+                {{ content.experience.title }}
+              </p>
+            </div>
+          }
+
+          <div class="main-info_experience_wrapper flex flex-col gap-5 sm:gap-10">
+            @for (experience of content.experience.items | slice: (page() - 1) * 2 : page() * 2; track experience) {
+              <div class="main-info_experience_item pl-2 sm:pl-3">
+                <ul
+                  class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">
+                  <li>
+                    <div class="flex justify-between text-subheader font-semibold">
+                      <span>{{ experience.companyName }}</span>
+                      <span>{{ experience.date }}</span>
+                    </div>
+                    <p class="mt-1 sm:mt-1.5 text-main-info font-semibold">
+                      {{ experience.position }}
+                    </p>
+                  </li>
+                  <li>
+                    {{ experience.info }}
+
+                    @if (experience.files) {
+                      <p
+                        class="underline cursor-pointer mt-1 hover:text-gray-500"
+                        (click)="downloadFiles(experience.files)">
+                        ( download files )
+                      </p>
+                    }
+                  </li>
+                  <li>
+                    <p class="font-semibold">Responsibilities:</p>
+                    <ul
+                      class="pl-5 sm:pl-9 mt-1 space-y-0.5 sm:space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
+                      @for (responsibility of experience.responsibilities; track responsibility) {
+                        <li>
+                          {{ responsibility }}
+                        </li>
+                      }
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            }
+          </div>
+        </div>
       </div>
-      <div class="flex items-center w-full">
-        <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full w-full"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
-      </div>
-      <div class="flex items-center w-full">
-        <div class="h-1.5 sm:h-2.5 bg-gray-300 rounded-full w-full"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-200 rounded-full w-80"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
-      </div>
-      <div class="flex items-center w-full">
-        <div class="h-1.5 sm:h-2.5 bg-gray-200 rounded-full w-full"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-full"></div>
-        <div class="h-1.5 sm:h-2.5 ms-2 bg-gray-300 rounded-full w-24"></div>
-      </div>
-    }
-    <span class="sr-only">Loading...</span>
-  </div>
-</ng-template>
+    </div>
+  </main>
+} @else {
+  <app-main-info-skeleton />
+}
+

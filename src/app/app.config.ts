@@ -1,13 +1,19 @@
-import { NgModule, isDevMode, APP_INITIALIZER, inject } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterOutlet } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
+import {
+  APP_INITIALIZER,
+  ApplicationConfig,
+  inject,
+  isDevMode,
+} from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideServiceWorker } from '@angular/service-worker';
 
-import { AppComponent } from '@app/app.component';
-import { AppRoutingModule } from '@app/app-routing.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '@environments/environment';
 import { ThemeService } from '@core/services';
+
+import { appRoutes } from './app.routes';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 const appInitFactory = () => {
   const themeService = inject(ThemeService);
@@ -17,23 +23,18 @@ const appInitFactory = () => {
   };
 };
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    RouterOutlet,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(appRoutes),
+    provideHttpClient(withInterceptorsFromDi()),
+    provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-  ],
-  providers: [
     // If you change the "baseHref" for local in angular.json "architect" -> "build" -> "options"
     // you also need to pass this provider for routing
-
     // {
     //     provide: APP_BASE_HREF,
     //     useValue: environment.BASE_HREF
@@ -44,6 +45,4 @@ const appInitFactory = () => {
       multi: true,
     },
   ],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
+};

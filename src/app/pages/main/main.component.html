@@ -1,34 +1,33 @@
 <div class="layout flex flex-col gap-4 md:gap-8">
-  <!--        Use bg-100% class instead of bg-cover to adjust height from background image-->
-  <div
-    class="page container relative max-w-4xl bg-no-repeat bg-cover shadow-xl"
-  >
-    <!--        Use this image to adjust height from background image-->
-    <!--        <img ngSrc="assets/images/background.webp" class="invisible" height="1280" width="905" alt="background">-->
+  <app-page-wrapper>
+    <app-toggle-theme pageHeader />
 
-    <div class="wrapper">
-      <app-toggle-theme />
+    <ng-container pageContent>
+      <app-header />
 
-      <!--            Add absolute class to adjust height from background image-->
-      <div
-        class="body w-full h-full flex flex-col p-3 sm:pt-6 sm:py-12 sm:px-10 top-0">
-        <app-header />
+      <app-main-info />
+    </ng-container>
+  </app-page-wrapper>
 
-        <app-main-info />
-      </div>
+  @defer (on viewport) {
+    <app-page-wrapper>
+      <app-main-info page="2" pageContent />
 
-      <app-footer />
-    </div>
-  </div>
+      <app-footer pageFooter />
+    </app-page-wrapper>
+  } @placeholder {
+    <div>Second page placeholder</div>
+  }
 
-  <div class="download text-center">
-    <a href="assets/pdf/Samvel_Hakobyan_CV.pdf"
-       download="Samvel_Hakobyan_CV"
-       class="text-typography-3 shadow-xl bg-typography-1 rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mb-2">
-      <svg-icon iconName="download" classes="w-3.5 h-3.5 mr-2" />
-      Download PDF
-    </a>
-  </div>
+  <!--    TODO Open when the PDF will be ready   -->
+  <!--    <div class="download text-center">-->
+  <!--      <a href="assets/pdf/Samvel_Hakobyan_CV.pdf"-->
+  <!--         download="Samvel_Hakobyan_CV"-->
+  <!--         class="text-typography-3 shadow-xl bg-typography-1 rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mb-2">-->
+  <!--        <svg-icon iconName="download" classes="w-3.5 h-3.5 mr-2" />-->
+  <!--        Download PDF-->
+  <!--      </a>-->
+  <!--    </div>-->
 </div>
 
 <app-main-info-modal />

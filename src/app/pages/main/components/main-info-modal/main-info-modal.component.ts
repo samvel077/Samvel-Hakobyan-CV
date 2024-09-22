@@ -1,21 +1,28 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 
 import { Modal } from 'flowbite';
 import { CookieService } from 'ngx-cookie-service';
 
-import { createModal } from '@app/utils';
 import { environment } from '@environments/environment';
+import { SvgIconComponent } from '@shared/components';
+import { createModal } from '@utils/flowbite-components';
 
 @Component({
   selector: 'app-main-info-modal',
+  standalone: true,
   templateUrl: './main-info-modal.component.html',
-  styleUrl: './main-info-modal.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SvgIconComponent],
 })
 export class MainInfoModalComponent implements OnInit {
   private modalRef: Modal;
 
-  constructor(private cookieService: CookieService) {}
+  private cookieService = inject(CookieService);
 
   ngOnInit(): void {
     if (!this.cookieService.get('main-info-modal-closed')) {
@@ -40,11 +47,11 @@ export class MainInfoModalComponent implements OnInit {
     }
   }
 
-  private openModal(): void {
-    this.modalRef.show();
+  closeModal(): void {
+    this.modalRef.hide();
   }
 
-  public closeModal(): void {
-    this.modalRef.hide();
+  private openModal(): void {
+    this.modalRef.show();
   }
 }

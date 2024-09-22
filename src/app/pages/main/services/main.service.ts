@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { IMainInfo } from '@core/interfaces/main-info.interface';
 import { environment } from '@environments/environment';
+
+import { IMainInfo } from '../models';
 
 @Injectable()
 export class MainService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
-  public getMainContent(): Observable<IMainInfo> {
+  getMainContent(): Observable<IMainInfo> {
     return this.http.get<IMainInfo>(
       `${environment.BASE_URL}assets/json/main-info.json`
     );

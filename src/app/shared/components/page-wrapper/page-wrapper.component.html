@@ -1,0 +1,25 @@
+<!--        Use bg-100% class instead of bg-cover to adjust height from background image-->
+<div
+  class="page container relative max-w-4xl bg-no-repeat bg-cover shadow-xl"
+>
+  <!--        Use this image to adjust height from background image-->
+  <!--        <img ngSrc="assets/images/background.webp" class="invisible" height="1280" width="905" alt="background">-->
+
+  <div class="wrapper">
+    <div class="ng-content page__header">
+      <ng-content select="[pageHeader]" />
+    </div>
+
+    <!--            Add absolute class to adjust height from background image-->
+    <div
+      class="body w-full h-full flex flex-col p-3 sm:pt-6 sm:py-12 sm:px-10 top-0">
+      <div class="ng-content page__content">
+        <ng-content select="[pageContent]" />
+      </div>
+    </div>
+
+    <div class="ng-content page__footer">
+      <ng-content select="[pageFooter]" />
+    </div>
+  </div>
+</div>

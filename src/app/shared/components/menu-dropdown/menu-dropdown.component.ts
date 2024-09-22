@@ -3,30 +3,38 @@ import {
   ChangeDetectorRef,
   Component,
   inject,
-  Input,
+  input,
 } from '@angular/core';
+import { NgTemplateOutlet, NgClass } from '@angular/common';
 
 import { DropdownOptions } from 'flowbite';
 
-import { IMenuDropdownItem } from '@app/core';
-import { createDropdown } from '@app/utils';
+import { IMenuDropdownItem } from '@core/interfaces';
+import { createDropdown } from '@utils/flowbite-components';
+
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
   selector: 'menu-dropdown',
   templateUrl: './menu-dropdown.component.html',
-  styleUrl: './menu-dropdown.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgTemplateOutlet, SvgIconComponent, NgClass],
 })
 export class MenuDropdownComponent {
-  @Input() item: IMenuDropdownItem;
+  item = input<IMenuDropdownItem>();
 
   private _cdr = inject(ChangeDetectorRef);
 
-  public openDropdown(
+  dropdownItems(items: IMenuDropdownItem[]): IMenuDropdownItem[] {
+    return items;
+  }
+
+  openDropdown(
     targetId: string,
     triggerId: string,
     options: DropdownOptions,
-    item: any
+    item: IMenuDropdownItem
   ): void {
     const dropdownOptions = {
       ...options,

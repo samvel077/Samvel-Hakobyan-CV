@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'svg-icon',
@@ -6,8 +7,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     <!--    You can also get the width and height directly from input and use like this-->
     <!--    <svg [attr.width.px]="width" attr.height="{{height}}px">-->
 
-    <svg [ngClass]="classes">
-      <use attr.xlink:href="assets/svg/sprite.svg#icon-{{ iconName }}"></use>
+    <svg [ngClass]="classes()">
+      <use attr.xlink:href="assets/svg/sprite.svg#icon-{{ iconName() }}"></use>
     </svg>
 
     <!--    <svg>-->
@@ -19,8 +20,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     <!--    </svg>-->
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgClass],
 })
 export class SvgIconComponent {
-  @Input() iconName: string;
-  @Input() classes: string;
+  iconName = input.required<string>();
+  classes = input<string>();
 }

@@ -1,6 +1,6 @@
 <ng-container
-  [ngTemplateOutlet]="item.dropdown ? dropdown : name"
-  [ngTemplateOutletContext]="{ $implicit: item }">
+  [ngTemplateOutlet]="item()?.dropdown ? dropdown : name"
+  [ngTemplateOutletContext]="{ $implicit: item() }">
 </ng-container>
 
 <ng-template #dropdown let-item let-trigger="trigger">
@@ -22,24 +22,26 @@
         'w-[6px] h-[7px] sm:w-2.5 sm:h-2.5 ml-1.5 sm:ml-2.5 transition ' +
         (item.dropdownElement?.isVisible() ? 'rotate-180' : '')
       " />
-  </div>
-  <div
-    [id]="item.dropdown.id + '-target'"
-    [ngClass]="item.dropdown.classes"
-    class="absolute whitespace-nowrap z-10 hidden w-auto text-sm text-typography-2 bg-typography-4 rounded-lg shadow-md">
-    <div class="p-2 sm:p-4 text-typography-2 text-main-info">
-      <ul class="space-y-1.5 sm:space-y-3 leading-none sm:leading-tight">
-        <li *ngFor="let dropdownItem of item.dropdown.items; let i = index" [id]="item.dropdown.id + '-nested-trigger-' + i">
-          <ng-container
-            [ngTemplateOutlet]="dropdownItem.dropdown ? dropdown : name"
-            [ngTemplateOutletContext]="{ $implicit: dropdownItem, trigger: item.dropdown.id + '-nested-trigger-' + i }">
-          </ng-container>
-        </li>
-      </ul>
     </div>
-  </div>
-</ng-template>
+    <div
+      [id]="item.dropdown.id + '-target'"
+      [ngClass]="item.dropdown.classes"
+      class="absolute whitespace-nowrap z-10 hidden w-auto text-sm text-typography-2 bg-typography-4 rounded-lg shadow-md">
+      <div class="p-2 sm:p-4 text-typography-2 text-main-info">
+        <ul class="space-y-1.5 sm:space-y-3 leading-none sm:leading-tight">
+          @for (dropdownItem of dropdownItems(item.dropdown.items); track dropdownItem; let i = $index) {
+            <li [id]="item.dropdown.id + '-nested-trigger-' + i">
+              <ng-container
+                [ngTemplateOutlet]="dropdownItem.dropdown ? dropdown : name"
+                [ngTemplateOutletContext]="{ $implicit: dropdownItem, trigger: item.dropdown.id + '-nested-trigger-' + i }">
+              </ng-container>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </ng-template>
 
-<ng-template #name let-item>
-  {{ item.name }}
-</ng-template>
+  <ng-template #name let-item>
+    {{ item.name }}
+  </ng-template>

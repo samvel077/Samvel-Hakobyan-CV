@@ -200,19 +200,75 @@
         "name": "Docker"
       },
       {
+        "name": "Nx Monorepos"
+      },
+      {
         "name": "Communication with Database"
       },
       {
         "name": "JavaScript Packages"
       },
       {
-        "name": "WebSocket and Rest API"
+        "name": "WebSocket, Rest and gRPC API"
       },
       {
         "name": "PWA, Service and Web workers"
       },
       {
         "name": "Object Oriented Programing"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "items": [
+      {
+        "date": "2024 - Present",
+        "companyName": "Cuebric",
+        "position": "Senior Angular Engineer",
+        "info": "Developed AI-powered tools for image editing, segmentation, and transformation, focused on enhancing and streamlining creative workflows for users.",
+        "responsibilities": [
+          "Developed an advanced image editor using Konva.js, allowing users to generate images via AI, draw on them, super-scale, cut, and segment elements.",
+          "Built and optimized Cuebric’s landing page, ensuring a responsive, visually engaging, and user-friendly experience, improving user engagement and conversion rates.",
+          "Collaborated closely with backend teams, integrating gRPC for efficient communication between frontend and backend services.",
+          "Designed and implemented a scalable admin panel using Angular, enabling administrators to manage users, content, and application settings with ease.",
+          "Implemented secure authentication and role-based access control in the admin panel to safeguard sensitive data and improve operational efficiency.",
+          "Collaborated with designers to ensure high-quality UI/UX, contributing to an intuitive and seamless user experience across the platform."
+        ]
+      },
+      {
+        "date": "2023 - 2024",
+        "companyName": "Technamin",
+        "position": "Frontend Angular Developer",
+        "info": "Conducted presentations on Zone.js and Angular Signals , and achieved recognition for a presentation on Angular Schematics.",
+        "files": [
+          "assets/pdf/Presentation.pdf",
+          "assets/pdf/Presentation-slides.pdf"
+        ],
+        "responsibilities": [
+          "Develop efficient and reusable components and front-end solutions, ensuring high application performance adn providing ongoing support",
+          "Maintained comprehensive test coverage for all features to guarantee product quality.",
+          "Actively participated in re-architecting client-side solutions to improve scalability and maintainability.",
+          "Contributed innovative ideas to the product development roadmap.",
+          "Collaborated with internal teams to design and architect software solutions.",
+          "Played a key role in developing the admin platform for controlling and managing gaming websites, overseeing their activities within Technamin, an iGaming software provider."
+        ]
+      },
+      {
+        "date": "2020 - 2023",
+        "companyName": "Arnology LLC",
+        "position": "Frontend Angular Developer",
+        "info": "Engaged with Arnology LLC, an outsourcing firm, as a freelance developer, actively participating in customer calls, conducting interviews, and contributing to diverse projects.",
+        "responsibilities": [
+          "Participated in client meetings and calls to gather project requirements, provide updates, and address any concerns.",
+          "Conducted interviews to assess client needs, understand project scope, and ensure alignment with business objectives.",
+          "Collaborated with cross-functional teams to analyze project requirements and define technical solutions.",
+          "Developed and maintained web applications for various clients, ensuring adherence to project timelines and quality standards.",
+          "Implemented responsive and user-friendly interfaces using Angular, Boostrap, Angular Material, NG Boostrap, SwiperJs, and other relevant technologies.",
+          "Integrated third-party libraries and services to enhance application functionality and user experience.",
+          "Utilized RxJs and Moment.js for data handling and manipulation, and created custom email templates for communication purposes.",
+          "Implemented Google Tags for tracking and analytics purposes to monitor user behavior."
+        ]
       }
     ]
   }

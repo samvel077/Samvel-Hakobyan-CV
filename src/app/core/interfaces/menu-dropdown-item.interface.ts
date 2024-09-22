@@ -1,8 +1,9 @@
-import { DropdownOptions } from 'flowbite';
+import { Dropdown, DropdownOptions } from 'flowbite';
 
 export interface IMenuDropdownItem {
   name: string;
   dropdown?: IMenuDropdown;
+  dropdownElement?: Dropdown;
 }
 
 export interface IMenuDropdown {
