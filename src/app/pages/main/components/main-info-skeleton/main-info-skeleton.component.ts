@@ -7,5 +7,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainInfoSkeletonComponent {
-  loadingTemplates: void[] = Array(8).fill(null);
+  loadingTemplates: void[] = Array(14).fill(null);
 }
