@@ -237,6 +237,19 @@
         ]
       },
       {
+        "date": "2024 - Present",
+        "companyName": "PIN-UP Global",
+        "position": "Frontend Angular Engineer",
+        "info": "Engineered high-performance solutions to optimize online gaming platforms, driving improved scalability and delivering a seamless user experience.",
+        "responsibilities": [
+          "Efficiently managed multiple projects within NX monorepos, ensuring scalability and ease of code sharing across different modules, particularly in complex admin systems.",
+          "Implemented Husky hooks with lint-staging to maintain code quality, combined with auto code formatting using Prettier for consistent style across the codebase.",
+          "Applied advanced design patterns like Adapters and Provider Tokens, optimizing HTTP requests and enabling seamless integration with mock data for testing and development.",
+          "Developed custom global UI components using Angular Material CDK and tailored existing ones to meet project-specific requirements, enhancing UI/UX consistency.",
+          "Contributed to team-wide efficiency by creating reusable components and leveraging industry best practices in code structuring and testing."
+        ]
+      },
+      {
         "date": "2023 - 2024",
         "companyName": "Technamin",
         "position": "Frontend Angular Developer",

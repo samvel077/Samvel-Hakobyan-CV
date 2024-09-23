@@ -9,6 +9,9 @@ import { SvgIconComponent } from '@shared/components';
   templateUrl: './toggle-theme.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SvgIconComponent],
+  host: {
+    class: 'absolute right-0',
+  },
 })
 export class ToggleThemeComponent {
   private themeService = inject(ThemeService);
