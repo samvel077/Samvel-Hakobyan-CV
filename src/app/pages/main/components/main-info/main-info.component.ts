@@ -4,7 +4,7 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { AsyncPipe, SlicePipe } from '@angular/common';
+import { AsyncPipe, JsonPipe, SlicePipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 import { MenuDropdownComponent } from '@shared/components';
@@ -24,6 +24,7 @@ import { MainInfoSkeletonComponent } from '../main-info-skeleton/main-info-skele
     AsyncPipe,
     SlicePipe,
     MainInfoSkeletonComponent,
+    JsonPipe,
   ],
   providers: [MainService],
 })

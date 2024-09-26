@@ -1,4 +1,9 @@
 @if (content()) {
+  {{ content()?.experience | json }}
+  <br/><br/>
+  {{ page() }}
+  <br/><br/>
+  {{ content()?.experience?.items | slice: (page() - 1) * 2 : page() * 2 | json }}
   <main>
     <div class="main-info flex justify-between gap-2 sm:gap-6">
       @if (page() === 1) {
@@ -98,7 +103,7 @@
           }
 
           <div class="main-info_experience_wrapper flex flex-col gap-5 sm:gap-10">
-            @for (experience of content()?.experience?.items | slice: (page() - 1) * 2 : page() * 2; track experience) {
+            @for (experience of content()?.experience?.items | slice: (page() - 1) * 2 : page() * 2; track $index) {
               <div class="main-info_experience_item pl-2 sm:pl-3">
                 <ul
                   class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">
