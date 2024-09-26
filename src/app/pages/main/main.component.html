@@ -9,7 +9,7 @@
     </ng-container>
   </app-page-wrapper>
 
-  @defer (on viewport) {
+  <!-- @defer (on viewport) {
     <app-page-wrapper>
       <app-main-info page="2" pageContent />
 
@@ -17,7 +17,13 @@
     </app-page-wrapper>
   } @placeholder {
     <div>Second page placeholder</div>
-  }
+  } -->
+  
+  <app-page-wrapper>
+    <app-main-info page="2" pageContent />
+
+    <app-footer pageFooter />
+  </app-page-wrapper>
 
   <!--    TODO Open when the PDF will be ready   -->
   <!--    <div class="download text-center">-->
