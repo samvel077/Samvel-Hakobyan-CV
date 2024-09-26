@@ -1,7 +1,7 @@
 @if (content()) {
-  {{ content()?.experience | json }}
-  <br/><br/>
-  {{ page() }}
+  <pre>
+    {{ content() | json }}
+  </pre>
   <br/><br/>
   {{ content()?.experience?.items | slice: (page() - 1) * 2 : page() * 2 | json }}
   <main>
