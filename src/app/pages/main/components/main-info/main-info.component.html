@@ -1,9 +1,4 @@
 @if (content()) {
-  <pre>
-    {{ content() | json }}
-  </pre>
-  <br/><br/>
-  {{ content()?.experience?.items | slice: (page() - 1) * 2 : page() * 2 | json }}
   <main>
     <div class="main-info flex justify-between gap-2 sm:gap-6">
       @if (page() === 1) {
