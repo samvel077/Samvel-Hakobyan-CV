@@ -12,7 +12,7 @@ export class MainService {
 
   getMainContent(): Observable<IMainInfo> {
     return this.http.get<IMainInfo>(
-      `${environment.BASE_URL}assets/json/main-info.json?v=${new Date().getTime()}`
+      `${environment.BASE_URL}assets/json/main-info.json?v=1.0`
     );
   }
 }
