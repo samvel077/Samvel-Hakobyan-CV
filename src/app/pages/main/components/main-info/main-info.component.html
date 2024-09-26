@@ -1,4 +1,4 @@
-@if (content$ | async; as content) {
+@if (content()) {
   <main>
     <div class="main-info flex justify-between gap-2 sm:gap-6">
       @if (page() === 1) {
@@ -9,13 +9,13 @@
               class="main-info_education_title text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5 w-fit">
               <p
                 class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-                {{ content.education.title }}
+                {{ content()?.education?.title }}
               </p>
             </div>
             <div class="main-info_education_list pl-2 sm:pl-3">
               <ul
                 class="space-y-2 text-typography-2 list-none list-inside text-main-info leading-none sm:leading-tight">
-                @for (education of content.education.items; track education) {
+                @for (education of content()?.education?.items; track education) {
                   <li>
                     <p class="font-semibold">{{ education.date }}</p>
                     <p class="mt-0.5">{{ education.info }}</p>
@@ -29,13 +29,13 @@
               class="main-info_qualifications_title text-main-info-title w-fit uppercase font-semibold mb-2 sm:mb-3.5">
               <p
                 class="px-5 sm:px-7 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-                {{ content.qualifications.title }}
+                {{ content()?.qualifications?.title }}
               </p>
             </div>
             <div class="main-info_qualifications_list ml-4 sm:ml-6">
               <ul
                 class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                @for (qualification of content.qualifications.items; track qualification) {
+                @for (qualification of content()?.qualifications?.items; track qualification) {
                   <li>
                     {{ qualification.info }}
                   </li>
@@ -48,13 +48,13 @@
               class="main-info_languages_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
               <p
                 class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-                {{ content.languages.title }}
+                {{ content()?.languages?.title }}
               </p>
             </div>
             <div class="main-info_languages_list ml-4 sm:ml-6">
               <ul
                 class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                @for (language of content.languages.items; track language) {
+                @for (language of content()?.languages?.items; track language) {
                   <li>
                     {{ language.info }}
                   </li>
@@ -67,13 +67,13 @@
               class="main-info_skills_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
               <p
                 class="px-5 sm:px-8 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-                {{ content.skills.title }}
+                {{ content()?.skills?.title }}
               </p>
             </div>
             <div class="main-info_skills_list ml-4 sm:ml-6">
               <ul
                 class="space-y-1 text-typography-2 list-disc list-outside text-main-info leading-none sm:leading-tight">
-                @for (skill of content.skills.items; track skill) {
+                @for (skill of content()?.skills?.items; track skill) {
                   <li>
                     <menu-dropdown [item]="skill" />
                   </li>
@@ -92,13 +92,13 @@
               class="main-info_experience_title w-fit text-main-info-title uppercase font-semibold mb-2 sm:mb-3.5">
               <p
                 class="px-8 sm:px-12 py-1 sm:py-2 text-typography-3 bg-typography-1 rounded-r-full rounded-l-full">
-                {{ content.experience.title }}
+                {{ content()?.experience?.title }}
               </p>
             </div>
           }
 
           <div class="main-info_experience_wrapper flex flex-col gap-5 sm:gap-10">
-            @for (experience of content.experience.items | slice: (page() - 1) * 2 : page() * 2; track experience) {
+            @for (experience of content()?.experience?.items | slice: (page() - 1) * 2 : page() * 2; track experience) {
               <div class="main-info_experience_item pl-2 sm:pl-3">
                 <ul
                   class="space-y-1.5 sm:space-y-2 text-typography-2 list-none list-inside leading-none sm:leading-tight text-main-info">

@@ -5,7 +5,7 @@ import {
   input,
 } from '@angular/core';
 import { AsyncPipe, SlicePipe } from '@angular/common';
-import { Observable } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 import { MenuDropdownComponent } from '@shared/components';
 import { fileDownload } from '@utils/file-download';
@@ -32,19 +32,11 @@ export class MainInfoComponent {
     transform: (value: string | number) => Number(value),
   });
 
-  content$: Observable<IMainInfo>;
+  mainService = inject(MainService);
 
-  private mainService = inject(MainService);
-
-  constructor() {
-    this.initContent();
-  }
+  content = toSignal<IMainInfo>(this.mainService.getMainContent());
 
   downloadFiles(fileUrls: string[]): void {
     fileDownload(fileUrls);
-  }
-
-  private initContent(): void {
-    this.content$ = this.mainService.getMainContent();
   }
 }
