@@ -25,33 +25,31 @@ export class MainInfoModalComponent implements OnInit {
   private cookieService = inject(CookieService);
 
   ngOnInit(): void {
-    if (!this.cookieService.get('main-info-modal-closed')) {
-      this.modalRef = createModal('main-info-modal', {
-        onHide: () => {
-          // set cookie to expires date to 1 hour
-          const now = new Date();
-          const time = now.getTime();
-          const expires = time + 3600 * 1000;
-          now.setTime(expires);
+    this.modalRef = createModal('main-info-modal', {
+      onHide: () => {
+        this.setCookie();
+      },
+    });
 
-          this.cookieService.set(
-            'main-info-modal-closed',
-            'true',
-            now,
-            environment.PATH
-          );
-        },
-      });
-
-      this.openModal();
-    }
+    this.modalRef.show();
   }
 
   closeModal(): void {
     this.modalRef.hide();
   }
 
-  private openModal(): void {
-    this.modalRef.show();
+  private setCookie(): void {
+    // set cookie to expires date to 1 hour
+    const now = new Date();
+    const time = now.getTime();
+    const expires = time + 3600 * 1000;
+    now.setTime(expires);
+
+    this.cookieService.set(
+      'main-info-modal-closed',
+      'true',
+      now,
+      environment.PATH
+    );
   }
 }
