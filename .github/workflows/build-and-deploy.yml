@@ -31,6 +31,7 @@ jobs:
 
       - name: Build Project
         run: |
+          NODE_ENV=production
           npm run build:prod
 #          node src/assets/scripts/create-404-html.js
 #         After "build:prod" command automatically will work the "postbuild:prod" command which declared in package.json
