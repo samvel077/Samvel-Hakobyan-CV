@@ -11,11 +11,12 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  NODE_ENV: production
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4

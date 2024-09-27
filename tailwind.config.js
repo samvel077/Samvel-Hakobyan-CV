@@ -34,3 +34,5 @@ module.exports = {
   },
   plugins: [require('flowbite/plugin')]
 };
+
+console.log(process.env, 'process.env');
