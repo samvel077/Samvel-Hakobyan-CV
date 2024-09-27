@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "ng build",
-    "build:prod": "NODE_ENV=production ng build --configuration production",
+    "build:prod": "ng build --configuration production",
     "postbuild:prod": "node src/assets/scripts/create-404-html.js & ts-node --project tsconfig.json src/assets/scripts/preload-images.ts -d docs -i src/assets/images/preload -ri media",
     "format": "prettier --write .",
     "ng": "ng",

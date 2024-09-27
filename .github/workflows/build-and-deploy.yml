@@ -30,6 +30,8 @@ jobs:
         run: npm install
 
       - name: Build Project
+        env:
+          NODE_ENV: production
         run: |
           npm run build:prod
 #          node src/assets/scripts/create-404-html.js
