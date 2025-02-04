@@ -16,7 +16,7 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "esnext",
+    "module": "commonjs",
     "useDefineForClassFields": false,
     "strictPropertyInitialization": false,
     "lib": ["ES2022", "dom"],
