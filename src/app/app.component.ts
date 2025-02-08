@@ -5,7 +5,9 @@ import {
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { initFlowbite } from 'flowbite';
+import { initDropdowns } from 'flowbite/lib/esm/components/dropdown';
+import { initModals } from 'flowbite/lib/esm/components/modal';
+import { initTooltips } from 'flowbite/lib/esm/components/tooltip';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,13 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     // The setTimeout need for iPhone initialization issue
     setTimeout(() => {
-      initFlowbite();
+      this.initFlowbiteComponents();
     }, 100);
+  }
+
+  private initFlowbiteComponents(): void {
+    initDropdowns();
+    initModals();
+    initTooltips();
   }
 }

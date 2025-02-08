@@ -1,11 +1,10 @@
-import {
-  Dropdown,
-  DropdownOptions,
-  Modal,
-  ModalOptions,
-  Tooltip,
-  TooltipOptions,
-} from 'flowbite';
+import Dropdown from 'flowbite/lib/esm/components/dropdown';
+import Modal from 'flowbite/lib/esm/components/modal';
+import Tooltip from 'flowbite/lib/esm/components/tooltip';
+
+import { DropdownOptions } from 'flowbite/lib/esm/components/dropdown/types';
+import { ModalOptions } from 'flowbite/lib/esm/components/modal/types';
+import { TooltipOptions } from 'flowbite/lib/esm/components/tooltip/types';
 
 export const createTooltip = (
   targetId: string,
