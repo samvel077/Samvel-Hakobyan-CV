@@ -1,27 +1,33 @@
-# SamvelHakobyanCV
+<div align="center">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+# 🌟 Samvel Hakobyan — Interactive CV
 
-## Development server
+**A fast, responsive, PWA-ready, and Dockerized interactive CV built with Angular.**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[![Angular](https://img.shields.io/badge/Angular-18.x-dd0031?logo=angular&logoColor=white)](#-tech-stack)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.x-3178c6?logo=typescript&logoColor=white)](#-tech-stack)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-06b6d4?logo=tailwindcss&logoColor=white)](#-tech-stack)
 
-## Code scaffolding
+**Live demo →** https://samvel077.github.io/Samvel-Hakobyan-CV/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+</div>
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✨ Overview
 
-## Running unit tests
+This repository hosts my **interactive CV**: an Angular single‑page app that showcases my profile, experience, projects, and skills with smooth UI, solid performance, and production‑grade tooling.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🧰 Tech Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Framework:** Angular 18 (Angular CLI)
+- **Language:** TypeScript
+- **UI:** Tailwind CSS + semantic HTML
+- **Build:** Angular CLI
+- **PWA:** Angular Service Worker (offline caching)
+- **Container:** Docker + NGINX (for production image)
+- **Tooling:** Prettier, EditorConfig, Husky hooks (repo hygiene)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> Tip: You’ll find configuration at the root (e.g. `angular.json`, `tailwind.config.js`, `ngsw-config.json`, Dockerfiles).
