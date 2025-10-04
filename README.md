@@ -5,7 +5,7 @@
 **A fast, responsive, PWA-ready, and Dockerized interactive CV built with Angular.**
 
 [![Angular](https://img.shields.io/badge/Angular-18.x-dd0031?logo=angular&logoColor=white)](#-tech-stack)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.x-3178c6?logo=typescript&logoColor=white)](#-tech-stack)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)](#-tech-stack)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-06b6d4?logo=tailwindcss&logoColor=white)](#-tech-stack)
 
 **Live demo →** https://samvel077.github.io/Samvel-Hakobyan-CV/
