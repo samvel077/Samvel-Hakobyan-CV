@@ -11,7 +11,7 @@ import {
   HeaderComponent,
   ToggleThemeComponent,
 } from '@core/components';
-import { SvgIconComponent, PageWrapperComponent } from '@shared/components';
+import { PageWrapperComponent } from '@shared/components';
 import { CookieService } from 'ngx-cookie-service';
 
 import { MainInfoComponent, MainInfoModalComponent } from './components';
@@ -25,8 +25,6 @@ import { MainInfoComponent, MainInfoModalComponent } from './components';
     HeaderComponent,
     MainInfoComponent,
     FooterComponent,
-    SvgIconComponent,
-    MainInfoModalComponent,
     PageWrapperComponent,
   ],
 })

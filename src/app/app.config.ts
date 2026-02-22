@@ -3,7 +3,6 @@ import {
   inject,
   isDevMode,
   provideAppInitializer,
-  provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
@@ -16,20 +15,17 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 
-const appInitFactory = () => {
+const appInitializer = () => {
   const themeService = inject(ThemeService);
 
-  return () => {
-    themeService.initTheme();
-  };
+  themeService.initTheme();
 };
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes),
-    provideAppInitializer(appInitFactory()),
+    provideAppInitializer(appInitializer),
     provideHttpClient(withInterceptorsFromDi()),
-    provideExperimentalZonelessChangeDetection(),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
