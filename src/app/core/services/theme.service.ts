@@ -57,7 +57,7 @@ export class ThemeService {
   }
 
   private setClassToBody(theme: ETheme): void {
-    const bodyClassList = document.body.classList;
+    const bodyClassList = document.documentElement.classList;
 
     if (bodyClassList.contains(this.currentTheme)) {
       bodyClassList.replace(this.currentTheme, theme);

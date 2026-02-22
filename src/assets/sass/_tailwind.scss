@@ -1,0 +1,26 @@
+@forward "tailwindcss";
+
+@theme {
+  --font-serif: "Montserrat", sans-serif;
+
+  --color-typography-1: var(--typography-1);
+  --color-typography-2: var(--typography-2);
+  --color-typography-3: var(--typography-3);
+  --color-typography-4: var(--typography-4);
+
+  --min-height-container: 1268px;
+
+  --background-size-100: 100%;
+
+  --width-wrapper-100: calc(100% - 24px);
+  --width-wrapper-100-sm: calc(100% - 80px);
+  --width-picture-before-100: calc(100% + 12px);
+  --width-picture-before-100-sm: calc(100% + 40px);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+@custom-variant dark (&:where(.dark *));

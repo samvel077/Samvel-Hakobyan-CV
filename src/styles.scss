@@ -1,26 +1,23 @@
 @use 'fonts' as *;
 @use 'variables' as *;
 @use 'mixins' as *;
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use 'tailwind' as *;
 
 @layer base {
   html {
     @apply font-serif;
     @apply bg-gray-100;
     @apply h-full;
-  }
 
-  body {
     // init the theme color variables
     @include theme-colors($light-colors);
 
     &.dark {
       @include theme-colors($dark-colors);
     }
+  }
 
+  body {
     @apply min-h-full;
     @apply p-5;
     @apply touch-manipulation;
