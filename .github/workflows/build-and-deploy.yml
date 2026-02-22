@@ -42,7 +42,7 @@ jobs:
 #      If you don't wont to use this option just change the folder name from docs to _site after build in angular.json
 #      The docs folder name need for default GitHub pages deploy
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: docs
 
