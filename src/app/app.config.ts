@@ -1,8 +1,8 @@
 import {
-  APP_INITIALIZER,
   ApplicationConfig,
   inject,
   isDevMode,
+  provideAppInitializer,
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
@@ -27,6 +27,7 @@ const appInitFactory = () => {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(appRoutes),
+    provideAppInitializer(appInitFactory()),
     provideHttpClient(withInterceptorsFromDi()),
     provideExperimentalZonelessChangeDetection(),
     provideServiceWorker('ngsw-worker.js', {
@@ -41,10 +42,5 @@ export const appConfig: ApplicationConfig = {
     //     provide: APP_BASE_HREF,
     //     useValue: environment.BASE_HREF
     // },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitFactory,
-      multi: true,
-    },
   ],
 };

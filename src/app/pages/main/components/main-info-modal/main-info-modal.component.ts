@@ -14,7 +14,6 @@ import { createModal } from '@utils/flowbite-components';
 
 @Component({
   selector: 'app-main-info-modal',
-  standalone: true,
   templateUrl: './main-info-modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SvgIconComponent],

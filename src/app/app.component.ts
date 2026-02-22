@@ -11,7 +11,6 @@ import { initTooltips } from 'flowbite/lib/esm/components/tooltip';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

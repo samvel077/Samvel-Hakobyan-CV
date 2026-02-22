@@ -4,7 +4,7 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { AsyncPipe, JsonPipe, SlicePipe } from '@angular/common';
+import { SlicePipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 import { MenuDropdownComponent } from '@shared/components';
@@ -16,16 +16,9 @@ import { MainInfoSkeletonComponent } from '../main-info-skeleton/main-info-skele
 
 @Component({
   selector: 'app-main-info',
-  standalone: true,
   templateUrl: './main-info.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    MenuDropdownComponent,
-    AsyncPipe,
-    SlicePipe,
-    MainInfoSkeletonComponent,
-    JsonPipe,
-  ],
+  imports: [MenuDropdownComponent, SlicePipe, MainInfoSkeletonComponent],
   providers: [MainService],
 })
 export class MainInfoComponent {

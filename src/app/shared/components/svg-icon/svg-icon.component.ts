@@ -20,7 +20,6 @@ import { NgClass } from '@angular/common';
     <!--    </svg>-->
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [NgClass],
 })
 export class SvgIconComponent {

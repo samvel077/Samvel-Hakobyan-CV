@@ -18,7 +18,6 @@ import { MainInfoComponent, MainInfoModalComponent } from './components';
 
 @Component({
   selector: 'app-main',
-  standalone: true,
   templateUrl: './main.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [

@@ -18,7 +18,6 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
   selector: 'menu-dropdown',
   templateUrl: './menu-dropdown.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [NgTemplateOutlet, SvgIconComponent, NgClass],
 })
 export class MenuDropdownComponent {

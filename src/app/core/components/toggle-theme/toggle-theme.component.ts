@@ -5,7 +5,6 @@ import { SvgIconComponent } from '@shared/components';
 
 @Component({
   selector: 'app-toggle-theme',
-  standalone: true,
   templateUrl: './toggle-theme.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SvgIconComponent],
