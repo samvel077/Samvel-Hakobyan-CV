@@ -5,7 +5,7 @@
   "scripts": {
     "build": "ng build",
     "build:prod": "ng build --configuration production",
-    "postbuild:prod": "node src/assets/scripts/create-404-html.js & ts-node --project tsconfig.json src/assets/scripts/preload-images.ts -d docs -i src/assets/images/preload -ri media",
+    "postbuild:prod": "node src/assets/scripts/create-404-html.js & tsx src/assets/scripts/preload-images.ts -d docs -i src/assets/images/preload -ri media",
     "format": "prettier --write .",
     "ng": "ng",
     "start": "ng serve",
@@ -46,7 +46,7 @@
     "postcss": "^8.5.6",
     "prettier": "^3.3.2",
     "tailwindcss": "^4.2.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.3"
   },
   "lint-staged": {
