@@ -30,4 +30,4 @@ This repository hosts my **interactive CV**: an Angular single‑page app that s
 - **Container:** Docker + NGINX (for production image)
 - **Tooling:** Prettier, EditorConfig, Husky hooks (repo hygiene)
 
-> Tip: You’ll find configuration at the root (e.g. `angular.json`, `tailwind.config.js`, `ngsw-config.json`, Dockerfiles).
+> Tip: You’ll find configuration at the root (e.g. `angular.json`, `tailwind.scss`, `ngsw-config.json`, Dockerfiles).
