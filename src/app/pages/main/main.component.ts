@@ -1,10 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   OnInit,
   ViewContainerRef,
 } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 import {
   FooterComponent,
@@ -12,6 +14,8 @@ import {
   ToggleThemeComponent,
 } from '@core/components';
 import { PageWrapperComponent } from '@shared/components';
+import { MainService } from '@pages/main/services';
+import { IMainInfo } from '@pages/main/models';
 import { CookieService } from 'ngx-cookie-service';
 
 import { MainInfoComponent, MainInfoModalComponent } from './components';
@@ -27,10 +31,27 @@ import { MainInfoComponent, MainInfoModalComponent } from './components';
     FooterComponent,
     PageWrapperComponent,
   ],
+  providers: [MainService],
 })
 export class MainComponent implements OnInit {
   private cookieService = inject(CookieService);
   private viewContainerRef = inject(ViewContainerRef);
+  private mainService = inject(MainService);
+
+  content = toSignal<IMainInfo>(this.mainService.getMainContent());
+
+  pages = computed<number[]>(() => {
+    const pages = [];
+    const experience = this.content()?.experience.items || [];
+
+    // Calculate pages count from experience
+    // Start from seconde page, because the first page is static with header for lazy loading other pages
+    for (let i = 2; i <= Math.round(experience.length / 2); i++) {
+      pages.push(i);
+    }
+
+    return pages;
+  });
 
   ngOnInit(): void {
     if (!this.cookieService.get('main-info-modal-closed')) {

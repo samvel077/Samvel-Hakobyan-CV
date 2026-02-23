@@ -5,18 +5,22 @@
     <ng-container pageContent>
       <app-header />
 
-      <app-main-info />
+      <app-main-info [content]="this.content()" />
     </ng-container>
   </app-page-wrapper>
 
-  @defer (on viewport) {
-    <app-page-wrapper>
-      <app-main-info page="2" pageContent />
+  @for (page of pages(); track page; let last = $last;) {
+    @defer (on viewport) {
+      <app-page-wrapper>
+        <app-main-info [content]="this.content()" [page]="page" pageContent />
 
-      <app-footer pageFooter />
-    </app-page-wrapper>
-  } @placeholder {
-    <div>Second page placeholder</div>
+        @if (last) {
+          <app-footer pageFooter />
+        }
+      </app-page-wrapper>
+    } @placeholder {
+      <div>Page {{ page }} placeholder</div>
+    }
   }
 
   <!--    TODO Open when the PDF will be ready   -->

@@ -1,16 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { SlicePipe } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 import { MenuDropdownComponent } from '@shared/components';
 import { fileDownload } from '@utils/file-download';
 
-import { MainService } from '../../services';
 import { IMainInfo } from '../../models';
 import { MainInfoSkeletonComponent } from '../main-info-skeleton/main-info-skeleton.component';
 
@@ -19,16 +12,12 @@ import { MainInfoSkeletonComponent } from '../main-info-skeleton/main-info-skele
   templateUrl: './main-info.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MenuDropdownComponent, SlicePipe, MainInfoSkeletonComponent],
-  providers: [MainService],
 })
 export class MainInfoComponent {
+  content = input<IMainInfo>();
   page = input(1, {
     transform: (value: string | number) => Number(value),
   });
-
-  mainService = inject(MainService);
-
-  content = toSignal<IMainInfo>(this.mainService.getMainContent());
 
   downloadFiles(fileUrls: string[]): void {
     fileDownload(fileUrls);
