@@ -14,10 +14,13 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { FlowbiteService } from '@core/services/flowbite.service';
 
 const appInitializer = () => {
   const themeService = inject(ThemeService);
+  const flowbiteService = inject(FlowbiteService);
 
+  flowbiteService.init();
   themeService.initTheme();
 };
 

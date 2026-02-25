@@ -6,7 +6,6 @@ import {
   OnInit,
   ViewContainerRef,
 } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 import {
   FooterComponent,
@@ -15,7 +14,6 @@ import {
 } from '@core/components';
 import { PageWrapperComponent } from '@shared/components';
 import { MainService } from '@pages/main/services';
-import { IMainInfo } from '@pages/main/models';
 import { CookieService } from 'ngx-cookie-service';
 
 import { MainInfoComponent, MainInfoModalComponent } from './components';
@@ -38,11 +36,11 @@ export class MainComponent implements OnInit {
   private viewContainerRef = inject(ViewContainerRef);
   private mainService = inject(MainService);
 
-  content = toSignal<IMainInfo>(this.mainService.getMainContent());
+  content = this.mainService.getMainContent();
 
   pages = computed<number[]>(() => {
     const pages = [];
-    const experience = this.content()?.experience.items || [];
+    const experience = this.content.value()?.experience.items || [];
 
     // Calculate pages count from experience
     // Start from seconde page, because the first page is static with header for lazy loading other pages

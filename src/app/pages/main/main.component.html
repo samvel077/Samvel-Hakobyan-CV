@@ -5,14 +5,14 @@
     <ng-container pageContent>
       <app-header />
 
-      <app-main-info [content]="this.content()" />
+      <app-main-info [content]="this.content" />
     </ng-container>
   </app-page-wrapper>
 
   @for (page of pages(); track page; let last = $last;) {
     @defer (on viewport) {
       <app-page-wrapper>
-        <app-main-info [content]="this.content()" [page]="page" pageContent />
+        <app-main-info [content]="this.content" [page]="page" pageContent />
 
         @if (last) {
           <app-footer pageFooter />

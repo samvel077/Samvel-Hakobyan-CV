@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 import { ETheme } from '../enums';
 
@@ -8,11 +7,6 @@ import { ETheme } from '../enums';
 })
 export class ThemeService {
   private _currentTheme: ETheme;
-
-  private _themeChanged$: BehaviorSubject<ETheme> = new BehaviorSubject<ETheme>(
-    this.currentTheme
-  );
-  themeChanged$: Observable<ETheme> = this._themeChanged$.asObservable();
 
   get currentTheme(): ETheme {
     return this._currentTheme;
@@ -25,8 +19,6 @@ export class ThemeService {
     this._currentTheme = value;
 
     localStorage.setItem('theme-mode', value);
-
-    this._themeChanged$.next(value);
   }
 
   initTheme(): void {
