@@ -4,6 +4,7 @@ export const environment = {
   // the baseHref must be between / / this lines
   BASE_HREF: '/Samvel-Hakobyan-CV/',
   BASE_URL: 'https://samvel077.github.io/Samvel-Hakobyan-CV/',
+  API_URL: 'https://khuulasurbvnmxopnchm.supabase.co/storage/v1/object/public',
   PATH: '/Samvel-Hakobyan-CV',
   production: true,
 };

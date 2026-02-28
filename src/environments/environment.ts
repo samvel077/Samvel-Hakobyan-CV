@@ -4,6 +4,7 @@ export const environment = {
 
   BASE_HREF: '',
   BASE_URL: 'http://localhost:4200/',
+  API_URL: 'https://khuulasurbvnmxopnchm.supabase.co/storage/v1/object/public',
   PATH: '/',
   production: false,
 };

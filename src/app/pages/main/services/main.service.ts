@@ -9,7 +9,7 @@ import { IMainInfo } from '../models';
 export class MainService {
   getMainContent(): HttpResourceRef<IMainInfo | undefined> {
     return httpResource<IMainInfo>(
-      () => `${environment.BASE_URL}assets/json/main-info.json?v=1.0`
+      () => `${environment.API_URL}/samvel-hakobyan-cv/main-info.json`
     );
   }
 }
