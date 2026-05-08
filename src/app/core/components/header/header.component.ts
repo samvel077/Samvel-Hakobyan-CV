@@ -13,7 +13,7 @@ import { createTooltip } from '@utils/flowbite-components';
 export class HeaderComponent {
   content: { name: string; position: string; about: string };
 
-  private experience = new Date().getFullYear() - 2019;
+  private experience = new Date().getFullYear() - 2020;
 
   constructor() {
     this.initContent();
@@ -30,7 +30,7 @@ export class HeaderComponent {
   private initContent(): void {
     this.content = {
       name: 'Samvel Hakobyan',
-      position: 'Frontend Angular Developer',
+      position: 'Senior Frontend Engineer',
       about: `Experienced Frontend Developer with ${this.experience}+ years of expertise specializing in JavaScript and proficient in Angular. Skilled in overcoming diverse challenges, I consistently deliver optimal solutions. Proficient in crafting complex web applications with intuitive user interfaces. Expertise in developing efficient and reusable components, maintaining clear dependency chains in terms of both application logic and file relationships.`,
     };
   }
